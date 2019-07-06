@@ -36,11 +36,11 @@ function initClusterMap(input) {
     for (var i in data){
       $(buildMunicSelector(data[i].key)).css("fill", "#e7e8ea");
     }
-  
+
     for (var i in data){
       $(buildMunicSelector(data[i].key)).css("fill", "#e7e8ea");
     }
-  
+
     for (var i in data){
       if (data[i].key == munic_current) {
         for (var j in data){
@@ -50,7 +50,7 @@ function initClusterMap(input) {
           }
         }
       }
-    }    
+    }
   });
 }
 
@@ -232,10 +232,10 @@ $(document).ready(function() {
   });
 
   $("#radio").on('change', function () {
-    getMunicipiosJson(function (data) { 
+    getMunicipiosJson(function (data) {
       for (var i in data){
         $("#filter-map g[data-municipio='" + data[i].key + "']").css("fill", "#e7e8ea");
-        $("#agrupamentos").find('li').remove()
+        $("#agrupamentos").find('li').remove();
       }
     });
   });
