@@ -183,20 +183,20 @@ function populeMunicipioData(idMunicipio) {
       $(".municipioName").text(municipio.munic);
       // $(".municipioNameLimit").text(municipio.munic.toString().substr(0, 11) + '..');
 
-      $('#indicador-ambiente-pontuacao').html(municipio.ian);
-      $('#indicador-ambiente-ranking').html(municipio.cpos_ian);
+      $('span[data-indicador-ambiente-pontuacao]').html(municipio.ian);
+      $('span[data-indicador-ambiente-ranking]').html(municipio.cpos_ian);
 
-      $('#pontecial-mercado-pontuacao').html(municipio.merc);
-      $('#pontecial-mercado-ranking').html(municipio.cpos_merc);
+      $('span[data-pontecial-mercado-pontuacao]').html(municipio.merc);
+      $('span[data-pontecial-mercado-ranking]').html(municipio.cpos_merc);
 
-      $('#capital-humano-pontuacao').html(municipio.caph);
-      $('#capital-humano-ranking').html(municipio.cpos_caph);
+      $('span[data-capital-humano-pontuacao]').html(municipio.caph);
+      $('span[data-capital-humano-ranking]').html(municipio.cpos_caph);
 
-      $('#gestao-fical-pontuacao').html(municipio.gestfin);
-      $('#gestao-fical-ranking').html(municipio.cpos_gestfin);
+      $('span[data-gestao-fical-pontuacao]').html(municipio.gestfin);
+      $('span[data-gestao-fical-ranking]').html(municipio.cpos_gestfin);
 
-      $('#infra-estrutura-pontuacao').html(municipio.infra);
-      $('#infra-estrutura-ranking').html(municipio.cpos_infra);
+      $('span[data-infra-estrutura-pontuacao]').html(municipio.infra);
+      $('span[data-infra-estrutura-ranking]').html(municipio.cpos_infra);
     });
   }
 }

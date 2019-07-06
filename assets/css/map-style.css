@@ -36,3 +36,7 @@
   box-shadow: 0 0 0 0.2rem rgba(216, 217, 219, 0.5);
 }
 
+.cc-conteudo-eixos .cc-box-eixo-geral .cc-como-funciona ul {
+  padding: 0;
+}
+
