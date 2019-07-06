@@ -163,7 +163,6 @@ function populeMunicipioData(idMunicipio) {
       $("#notaReguacmin_merc").text(municipio.cmin_merc);
       $("#notaReguacmax_merc").text(municipio.cmax_merc);
 
-
       $("#notaReguacmed_caph").text(municipio.cmed_caph);
       $("#notaReguacmin_caph").text(municipio.cmin_caph);
       $("#notaReguacmax_caph").text(municipio.cmax_caph);
