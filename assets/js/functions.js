@@ -323,14 +323,6 @@ $(document).on('click', '#card-infraEstrutura', function(event) {
 
 });
 
-// $(document).on('scroll', function() {
-//     if($(this).scrollTop()>=$('#imgbg-final').position().top){
-//         $(".sidebar.fixed").css("display", "none");
-//     } else {
-//         $(".sidebar.fixed").css("display", "block");
-//     }
-// });
-
 $(document).on('click', '#radio #option1', function(event) {
   $("label#label1").addClass("active");
   $("label#label2").removeClass("active");
@@ -348,6 +340,7 @@ $(document).on('click', '#radio #option3', function(event) {
   $("label#label2").removeClass("active");
   $("label#label1").removeClass("active");
 });
+
 $(document).on('click', '.button-js', function(event) {
     $(this).find(".minus").toggle();
     $(this).find(".plus").toggle();
@@ -426,13 +419,6 @@ $(document).on('click', '#card-infraEstrutura', function(event) {
 
 });
 
-// $(document).on('scroll', function() {
-//     if($(this).scrollTop()>=$('#imgbg-final').position().top){
-//         $(".sidebar.fixed").css("display", "none");
-//     } else {
-//         $(".sidebar.fixed").css("display", "block");
-//     }
-// });
 
 $(document).on('click', '#radio #option1', function(event) {
     $("label#label1").addClass("active");
@@ -451,135 +437,3 @@ $(document).on('click', '#radio #option3', function(event) {
     $("label#label2").removeClass("active");
     $("label#label1").removeClass("active");
 });
-
-// $(window).scroll(function() {
-//     var scroll = $(window).scrollTop();
-//     if (scroll >= 1500) {
-//         $(".sidebar").addClass("fixed");
-//         $("#imgbg-final").css("z-index", "1");
-//     } else {
-//         $(".sidebar").removeClass("fixed");
-//     }
-// });
-
-// function selected(data){
-//   var selectedValueRadio;
-//   $("#radio").on('change', function () {
-//     selectedValueRadio = $("input[name='options']:checked").val();
-//     $('#list-munic option:first').prop('selected', true);
-//     for (var i in data){
-//       $("#" + data[i].key).css("fill", "#e7e8ea");
-//       $("#agrupamentos").find('li').remove()
-//     }
-//     console.log(selectedValueRadio);
-//   });
-
-//   $('#list-munic').on('change', function(event) {
-//     event.stopPropagation();
-//     var munic_current = $("#list-munic option:selected" ).val()
-//     var selectGroup = false;
-
-//     for (var i in data){
-//       $("#" + data[i].key).css("fill", "#e7e8ea");
-//       $("#agrupamentos").find('li').remove()
-//     }
-
-//     for (var i in data){
-//       if (data[i].key == munic_current) {
-//         if(selectedValueRadio == "cluster"){
-//           for (var j in data){
-//             if (data[i].cluster == data[j].cluster) {
-//               $("#" + data[j].key).css("fill", "#a1a1a1");
-//               $("#" + munic_current).css("fill", "#ffba5a");
-//               $("#agrupamentos").append("<li>" + data[j].munic +": "+ data[j].cluster+ "</li>");
-//             }
-//           }
-//         }else if(selectedValueRadio == "regional"){
-//           for (var j in data){
-//             if (data[i].regional == data[j].regional) {
-//               $("#" + data[j].key).css("fill", "#2d3091");
-//               $("#" + munic_current).css("fill", "#ffba5a");
-//               $("#agrupamentos").append("<li>" + data[j].munic +": "+ data[j].regional+ "</li>");
-//             }
-//           }
-//         }else if(selectedValueRadio == "estadual"){
-//           for (var j in data){
-//             $("#" + data[j].key).css("fill", "#a1a1a1");
-//             $("#" + munic_current).css("fill", "#ffba5a");
-//           }
-//         }else{
-//           selectGroup = true
-//         }
-//       }
-//     }
-
-//     // if (selectGroup) {
-//     //   alert("Escolha um grupo primeiro!")
-//     // }
-//   });
-// }
-
-// function clicked(data){
-//   var selectedValueRadio;
-//   var selectGroup = false;
-
-//   $("#radio").on('change', function () {
-//     selectedValueRadio = $("input[name='options']:checked").val();
-//     $('#list-munic option:first').prop('selected', true);
-//     for (var i in data){
-//       $("#" + data[i].key).css("fill", "#e7e8ea");
-//       $("#agrupamentos").find('li').remove()
-//     }
-//     console.log(selectedValueRadio);
-//   });
-
-//   $('g').on('click', function(event) {
-//     event.stopPropagation();
-//     var munic_current = $(this).attr("id")
-//     $("#list-munic").val($(this).attr("id")).change();
-
-//     for (var i in data){
-//       $("#" + data[i].key).css("fill", "#e7e8ea");
-//       $("#agrupamentos").find('li').remove()
-//     }
-
-//     for (var i in data){
-//       if (data[i].key == munic_current) {
-//         if(selectedValueRadio == "cluster"){
-//           for (var j in data){
-//             if (data[i].cluster == data[j].cluster) {
-//               $("#" + data[j].key).css("fill", "#a1a1a1");
-//               $("#" + munic_current).css("fill", "#ffba5a");
-//               $("#agrupamentos").append("<li>" + data[j].munic +": "+ data[j].cluster+ "</li>");
-//             }
-//           }
-//         }else if(selectedValueRadio == "regional"){
-//           for (var j in data){
-//             if (data[i].regional == data[j].regional) {
-//               $("#" + data[j].key).css("fill", "#2d3091");
-//               $("#" + munic_current).css("fill", "#ffba5a");
-//               $("#agrupamentos").append("<li>" + data[j].munic +": "+ data[j].regional+ "</li>");
-//             }
-//           }
-//         }else if(selectedValueRadio == "estadual"){
-//           for (var j in data){
-//             $("#" + data[j].key).css("fill", "#a1a1a1");
-//             $("#" + munic_current).css("fill", "#ffba5a");
-//           }
-//         }else{
-//           selectGroup = true
-//         }
-//       }
-//     }
-
-//     if (selectGroup) {
-//       alert("Escolha um grupo primeiro!")
-//     }
-//   });
-// }
-
-
-
-
-
-
