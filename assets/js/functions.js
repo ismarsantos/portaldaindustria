@@ -1,14 +1,9 @@
 
 function getMunicipiosJson (callback) {
-  return $.ajax({
-    url: "https://raw.githubusercontent.com/kleytonmr/ES-municipios/master/munic/banco.min.json?token=AHNGKJ76U73FCUWASQXOPAK5DHRMY",
-    dataType: "json",
-    success: function(data) {
-      if (callback) {
-        callback(data.municipios);
-      }
-    }
-  });
+  $.getJSON("https://raw.githubusercontent.com/kleytonmr/ES-municipios/master/munic/banco.min.json?token=AHNGKJ76U73FCUWASQXOPAK5DHRMY",
+    function (data) {
+      callback(data.municipios);
+    });
 }
 
 function initMunicipioSelect(data) {
@@ -125,77 +120,13 @@ function populeMunicipioData(idMunicipio) {
 
       // $('img#mapa-json').attr("src","assets/img/mapa-cluster-" + municipio.key + ".png");
 
-      $("#top-nota").text(municipio.merc);
-      $("#merc-nota").text(municipio.merc);
-
-      $("#right-nota").text(municipio.caph);
-      $("#caph-nota").text(municipio.caph);
-
-      $("#bottom-nota").text(municipio.gestfin);
-      $("#gestfin-nota").text(municipio.gestfin);
-
-      $("#left-nota").text(municipio.infra);
-      $("#infra-nota").text(municipio.infra);
-
-      $("#ian-nota-escolha").text(municipio.ian);
-      $("#ian-nota").text(municipio.ian);
-
-      $("#top-ranking").text(municipio.cpos_merc + 'º');
-      $("#cpos_merc-ranking").text(municipio.cpos_merc + 'º');
-      $("#right-ranking").text(municipio.cpos_caph + 'º');
-      $("#cpos_caph-ranking").text(municipio.cpos_caph + 'º');
-      $("#bottom-ranking").text(municipio.cpos_gestfin + 'º');
-      $("#cpos_gestfin-ranking").text(municipio.cpos_gestfin + 'º');
-      $("#left-ranking").text(municipio.cpos_infra + 'º');
-      $("#cpos_infra-ranking").text(municipio.cpos_infra + 'º');
-      $("#cpos_infra-ranking").text(municipio.cpos_infra + 'º');
-      $("#ian-nota-ranking").text(municipio.cpos_ian + 'º');
-      $("#cpos_ian-ranking").text(municipio.cpos_ian + 'º');
-
-      $("#notaReguaPrincipaCaph").text(municipio.caph);
-      $("#notaReguaPrincipaMerc").text(municipio.merc);
-      $("#notaReguaPrincipaGestfin").text(municipio.gestfin);
-      $("#notaReguaPrincipaInfra").text(municipio.infra);
-      $("#notaReguaPrincipaIan").text(municipio.ian);
-
-
-      $("#notaReguacmed_merc").text(municipio.cmed_merc);
-      $("#notaReguacmin_merc").text(municipio.cmin_merc);
-      $("#notaReguacmax_merc").text(municipio.cmax_merc);
-
-      $("#notaReguacmed_caph").text(municipio.cmed_caph);
-      $("#notaReguacmin_caph").text(municipio.cmin_caph);
-      $("#notaReguacmax_caph").text(municipio.cmax_caph);
-
-      $("#notaReguacmed_infra").text(municipio.cmed_infra);
-      $("#notaReguacmin_infra").text(municipio.cmin_infra);
-      $("#notaReguacmax_infra").text(municipio.cmax_infra);
-
-      $("#notaReguacmed_gestfin").text(municipio.cmed_gestfin);
-      $("#notaReguacmin_gestfin").text(municipio.cmin_gestfin);
-      $("#notaReguacmax_gestfin").text(municipio.cmax_gestfin);
-
-      //Capital Humano - educaçao
-      $("#n_ideb_fund_1_59y").text(municipio.n_ideb_fund_1_59y);
-      $("#n_ideb_fund_2_1014y").text(municipio.n_ideb_fund_2_1014y);
-
-      $(".municipioName").text(municipio.munic);
-      // $(".municipioNameLimit").text(municipio.munic.toString().substr(0, 11) + '..');
-
-      $('span[data-indicador-ambiente-pontuacao]').html(municipio.ian);
-      $('span[data-indicador-ambiente-ranking]').html(municipio.cpos_ian);
-
-      $('span[data-pontecial-mercado-pontuacao]').html(municipio.merc);
-      $('span[data-pontecial-mercado-ranking]').html(municipio.cpos_merc);
-
-      $('span[data-capital-humano-pontuacao]').html(municipio.caph);
-      $('span[data-capital-humano-ranking]').html(municipio.cpos_caph);
-
-      $('span[data-gestao-fical-pontuacao]').html(municipio.gestfin);
-      $('span[data-gestao-fical-ranking]').html(municipio.cpos_gestfin);
-
-      $('span[data-infra-estrutura-pontuacao]').html(municipio.infra);
-      $('span[data-infra-estrutura-ranking]').html(municipio.cpos_infra);
+      var keys = Object.keys(municipio);
+      $(keys).each(function (i, name) { 
+        $('#' + name).html(municipio[name]);
+        $('span[data-'+ name +']').html(municipio[name]);
+        if (name === 'munic')
+          $('span[data-municipio]').html(municipio.munic);
+      });
     });
   }
 }

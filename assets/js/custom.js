@@ -5,6 +5,15 @@ $(document).ready(function() {
     bottomSpacing: 300,
   });
 
+  $('a[data-toggle="pill"]').on('click', function (e) {
+    $('.cc-box-card.active').removeClass("active");
+    $('html, body').animate({
+        scrollTop: $("#categorias").offset().top
+    }, 0);
+    $(this).find(">:first-child").addClass("active");
+    stickySidebar.updateSticky();
+  });
+
   //Carousel
   $(".cc-custom-carousel").slick({
       slidesToShow:2,
