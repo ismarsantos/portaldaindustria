@@ -2,7 +2,7 @@ $(document).ready(function() {
   var sidebar = document.getElementById('sidebar');
   var stickySidebar = new StickySidebar(sidebar, {
     topSpacing: 20,
-    bottomSpacing: 20,
+    bottomSpacing: 300,
   });
 
   //Carousel
