@@ -12,6 +12,9 @@ $(document).ready(function() {
     }, 0);
     $(this).find(">:first-child").addClass("active");
     stickySidebar.updateSticky();
+    setTimeout(function () {
+      stickySidebar.updateSticky();
+    }, 1000);
   });
 
   //Carousel
@@ -58,8 +61,6 @@ $(document).ready(function() {
     $(this).find(".fa").removeClass("fa-plus");
     $(this).find(".fa").removeClass("fa-minus");
     $(this).find(".fa").addClass(classe);
-
-    $('#sidebar').stickySidebar({ resizeSensor: true });
   });
 
   $(".cc-custom-label").on("click", function(){
@@ -70,23 +71,23 @@ $(document).ready(function() {
   });
 
   $(document).on('click', '.cc-btn-drop-eixo', function(event) {
-      var classe = $(this).find(".fa").attr("class");
-      if(classe == "fa fa-plus"){
-        classe = "fa-minus";
-        $(this).closest(".cc-eixo").find(".cc-content").fadeIn("1000");
-      }else{
-        classe = "fa-plus";
-        $(this).closest(".cc-eixo").find(".cc-content").removeClass("cc-eixo-active");
-        $(this).closest(".cc-eixo").find(".cc-content").fadeOut("1000");
-      }
+    var classe = $(this).find(".fa").attr("class");
+    if(classe == "fa fa-plus"){
+      classe = "fa-minus";
+      $(this).closest(".cc-eixo").find(".cc-content").fadeIn("1000");
+    }else{
+      classe = "fa-plus";
+      $(this).closest(".cc-eixo").find(".cc-content").removeClass("cc-eixo-active");
+      $(this).closest(".cc-eixo").find(".cc-content").fadeOut("1000");
+    }
 
-      $(this).find(".fa").removeClass("fa-plus");
-      $(this).find(".fa").removeClass("fa-minus");
-      $(this).find(".fa").addClass(classe);
+    $(this).find(".fa").removeClass("fa-plus");
+    $(this).find(".fa").removeClass("fa-minus");
+    $(this).find(".fa").addClass(classe);
 
-      setTimeout(function () {
-        stickySidebar.updateSticky();
-      }, 1000)
+    setTimeout(function () {
+      stickySidebar.updateSticky();
+    }, 1000);
   });
 
   $(document).on('click', '.cc-btn-drop-acordion', function(event) {
