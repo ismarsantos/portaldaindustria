@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/slick-theme.css">
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/pace.css">
 </head>
 
 <body>
@@ -340,8 +341,8 @@
                                             <h4 class="cc-titulo">Membros deste cluster</h4><span class="cc-caixa-button"><button class="btn btn-primary cc-btn-cluster" type="button"><i class="fa fa-plus"></i></button></span>
                                             <div class="clearfix"></div>
                                         </div>
-                                        <div class="cc-content-cluster">
-                                            <p></p>
+                                        <div id="membros-cluster" class="cc-content-cluster">
+                                          
                                         </div>
                                     </div>
                                 </div>
@@ -2856,40 +2857,48 @@
                                   <option selected="">Selecione</option>
                                 </select>
                               </div>
-                                <div class="cc-box-rank"><span class="cc-ian">Ian: <strong>3,9</strong></span><span class="cc-ranking">RANKING:&nbsp;<strong>2º</strong><br></span>
-                                    <div class="clearfix"></div>
+                                <div class="cc-box-rank">
+                                  <span class="cc-ian">
+                                    Ian: &nbsp;
+                                    <strong>
+                                      <span id="ian">3,9</span>
+                                    </strong>
+                                  </span>
+                                  <span class="cc-ranking">
+                                    RANKING: &nbsp;
+                                    <strong>
+                                      <span id="ranking">3</span>º
+                                    </strong>
+                                  </span>
+                                  <div class="clearfix"></div>
                                 </div>
                                 <div id="radio" class="cc-box-tipo">
                                   <div class="row">
                                     <div class="col-4">
                                         <div class="cc-box-custom-radio">
-                                          <label class="cc-custom-label cc-active" for="option1">Cluster
+                                          <label class="cc-custom-label cc-active" for="option1">
+                                            Cluster
                                             <input type="radio" id="option1" class="cc-custom-radio" name="options" value="cluster" checked="true">
                                           </label>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                         <div class="cc-box-custom-radio">
-                                          <label class="cc-custom-label" for="option2">Regional
+                                          <label class="cc-custom-label" for="option2">
+                                            Regional
                                             <input type="radio" id="option2" class="cc-custom-radio" name="options" value="regional">
                                           </label>
                                         </div>
                                     </div>
                                     <div class="col-4">
                                       <div class="cc-box-custom-radio">
-                                        <label class="cc-custom-label" for="option3">Estadual
+                                        <label class="cc-custom-label" for="option3">
+                                          Estadual
                                           <input type="radio" id="option3" class="cc-custom-radio" name="options" value="estadual">
                                         </label>
                                       </div>
                                     </div>
-                                </div>
-                            </div>
-                                <div class="cc-box-mapa">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <div class="cc-content-mapa"></div>
-                                        </div>
-                                    </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -3239,17 +3248,18 @@
                                     <div class="d-flex align-items-center float-left">
                                       <img class="cc-icone" src="assets/img/produzir-menu-infra.png">
                                       <h4 class="cc-titulo">Infraestrutura</h4>
-                                    </div><span class="d-block cc-ranking">0,0</span>
+                                    </div>
+                                    <span id="infra-ranking" class="d-block cc-ranking">0,0</span>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="cc-alinha-items">
                                     <div class="cc-box-valores">
                                       <span class="cc-legenda-cluster cc-cor-cinza">Média do cluster</span>
-                                      <span class="cc-valor cc-cor-cinza">1,2</span>
+                                      <span id="infra-media" class="cc-valor cc-cor-cinza">1,2</span>
                                     </div>
                                     <div class="cc-box-valores">
                                       <span class="cc-legenda-cluster cc-cor-marrom">Vitória</span>
-                                      <span class="cc-valor cc-cor-marrom">1,2</span>
+                                      <span id="infra-pos" class="cc-valor cc-cor-marrom">1,2</span>
                                     </div>
                                 </div>
                                 <div class="cc-linha" style="margin-bottom: 30px;"></div>
@@ -3261,17 +3271,18 @@
                                     <div class="d-flex align-items-center float-left">
                                       <img class="cc-icone" src="assets/img/produzir-menu-gestao.png">
                                       <h4 class="cc-titulo">Gestão fiscal</h4>
-                                    </div><span class="d-block cc-ranking">0,0</span>
+                                    </div>
+                                    <span id="gfiscal-ranking" class="d-block cc-ranking">0,0</span>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="cc-alinha-items">
                                     <div class="cc-box-valores">
                                       <span class="cc-legenda-cluster cc-cor-cinza">Média do cluster</span>
-                                      <span class="cc-valor cc-cor-cinza">1,2</span>
+                                      <span id="gfiscal-media" class="cc-valor cc-cor-cinza">1,2</span>
                                     </div>
                                     <div class="cc-box-valores">
                                       <span class="cc-legenda-cluster cc-cor-marrom">Vitória</span>
-                                      <span class="cc-valor cc-cor-marrom">1,2</span>
+                                      <span id="gfiscal-pos" class="cc-valor cc-cor-marrom">1,2</span>
                                     </div>
                                 </div>
                                 <div class="cc-linha" style="margin-bottom: 30px;"></div>
@@ -3284,17 +3295,17 @@
                                       <img class="cc-icone" src="assets/img/icone-moeda.png">
                                       <h4 class="cc-titulo">Potencial de mercado</h4>
                                     </div>
-                                    <span class="d-block cc-ranking">0,0</span>
+                                    <span id="pmercado-ranking" class="d-block cc-ranking">0,0</span>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="cc-alinha-items">
                                     <div class="cc-box-valores">
                                       <span class="cc-legenda-cluster cc-cor-cinza">Média do cluster</span>
-                                      <span class="cc-valor cc-cor-cinza">1,2</span>
+                                      <span id="pmercado-media" class="cc-valor cc-cor-cinza">1,2</span>
                                     </div>
                                     <div class="cc-box-valores">
                                       <span class="cc-legenda-cluster cc-cor-marrom">Vitória</span>
-                                      <span class="cc-valor cc-cor-marrom">1,2</span>
+                                      <span id="pmercado-pos" class="cc-valor cc-cor-marrom">1,2</span>
                                     </div>
                                 </div>
                                 <div class="cc-linha" style="margin-bottom: 30px;"></div>
@@ -3306,17 +3317,18 @@
                                     <div class="d-flex align-items-center float-left">
                                       <img class="cc-icone" src="assets/img/produzir-menu-capital.png">
                                       <h4 class="cc-titulo">Capital humano</h4>
-                                    </div><span class="d-block cc-ranking">0,0</span>
+                                    </div>
+                                    <span id="chumano-ranking" class="d-block cc-ranking">0,0</span>
                                     <div class="clearfix"></div>
                                 </div>
                                 <div class="cc-alinha-items">
                                     <div class="cc-box-valores">
                                       <span class="cc-legenda-cluster cc-cor-cinza">Média do cluster</span>
-                                      <span class="cc-valor cc-cor-cinza">1,2</span>
+                                      <span id="chumano-media" class="cc-valor cc-cor-cinza">1,2</span>
                                     </div>
                                     <div class="cc-box-valores">
                                       <span class="cc-legenda-cluster cc-cor-marrom">Vitória</span>
-                                      <span class="cc-valor cc-cor-marrom">1,2</span>
+                                      <span id="chumano-pos" class="cc-valor cc-cor-marrom">1,2</span>
                                     </div>
                                 </div>
                                 <div class="cc-linha" style="margin-bottom: 30px;"></div>
@@ -3604,6 +3616,7 @@
     <script src="assets/js/slick.min.js"></script>
     <script src="assets/js/ResizeSensor.js"></script>
     <script src="assets/js/sticky-sidebar.min.js"></script>
+    <script src="assets/js/pace.min.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/functions.js"></script>
   </body>

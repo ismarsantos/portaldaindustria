@@ -121,7 +121,7 @@ function populeMunicipioData(idMunicipio) {
       // $('img#mapa-json').attr("src","assets/img/mapa-cluster-" + municipio.key + ".png");
 
       var keys = Object.keys(municipio);
-      $(keys).each(function (i, name) { 
+      $(keys).each(function (i, name) {
         $('#' + name).html(municipio[name]);
         $('span[data-'+ name +']').html(municipio[name]);
         if (name === 'munic')
@@ -141,6 +141,94 @@ function setFilterMapSelected(idMunicipio) {
   $(filter).click();
 }
 
+function clickFilterMap(input) {
+  getMunicipiosJson(function(data) {
+    var municipio = data.find(obj => {
+      return obj.key === input.data('municipio');
+    });
+
+    var selectedValueRadio = $("input[name='options']:checked").val();
+
+    if (selectedValueRadio === 'cluster') {
+      // cluster
+      $('#ian')             .html(municipio.ian);
+      $('#ranking')         .html(municipio.cpos_ian);
+      $('#infra-ranking')   .html(municipio.cpos_infra);
+      $('#infra-media')     .html(municipio.cmed_infra);
+      $('#infra-pos')       .html(municipio.cpos_infra);
+      $('#gfiscal-ranking') .html(municipio.cpos_gestfin);
+      $('#gfiscal-media')   .html(municipio.cmed_gestfin);
+      $('#gfiscal-pos')     .html(municipio.cpos_gestfin);
+      $('#pmercado-ranking').html(municipio.cpos_merc);
+      $('#pmercado-media')  .html(municipio.cmed_merc);
+      $('#pmercado-pos')    .html(municipio.cpos_merc);
+      $('#chumano-ranking') .html(municipio.cpos_caph);
+      $('#chumano-media')   .html(municipio.cmed_caph);
+      $('#chumano-pos')     .html(municipio.cpos_caph);
+    } else if (selectedValueRadio === 'regional') {
+      // regional
+      $('#ian')             .html(municipio.rpos_ian);
+      $('#ranking')         .html(municipio.regional);
+      $('#infra-ranking')   .html(municipio.rpos_infra);
+      $('#infra-media')     .html(municipio.rmed_infra);
+      $('#infra-pos')       .html(municipio.rpos_infra);
+      $('#gfiscal-ranking') .html(municipio.rpos_gestfin);
+      $('#gfiscal-media')   .html(municipio.rmed_gestfin);
+      $('#gfiscal-pos')     .html(municipio.rpos_gestfin);
+      $('#pmercado-ranking').html(municipio.rpos_merc);
+      $('#pmercado-media')  .html(municipio.rmed_merc);
+      $('#pmercado-pos')    .html(municipio.rpos_merc);
+      $('#chumano-ranking') .html(municipio.rpos_caph);
+      $('#chumano-media')   .html(municipio.rmed_caph);
+      $('#chumano-pos')     .html(municipio.rpos_caph);
+    } else {
+      // estadual
+      $('#ian')             .html(municipio.med_ian);
+      $('#ranking')         .html(municipio.pos_ian);
+      $('#infra-ranking')   .html(municipio.pos_ian);
+      $('#infra-media')     .html(municipio.med_infra);
+      $('#infra-pos')       .html(municipio.pos_ian);
+      $('#gfiscal-ranking') .html(municipio.pos_ian);
+      $('#gfiscal-media')   .html(municipio.med_gestfin);
+      $('#gfiscal-pos')     .html(municipio.pos_ian);
+      $('#pmercado-ranking').html(municipio.pos_ian);
+      $('#pmercado-media')  .html(municipio.med_merc);
+      $('#pmercado-pos')    .html(municipio.pos_ian);
+      $('#chumano-ranking') .html(municipio.pos_ian);
+      $('#chumano-media')   .html(municipio.med_caph);
+      $('#chumano-pos')     .html(municipio.pos_ian);
+    }
+  });
+}
+
+function buildMembrosCluster(input) {
+  var idMunicipio = $(input).val() || $(input).data('municipio');
+  
+  if (idMunicipio) {
+    getMunicipiosJson(function(data) {
+      var selected = data.find(munic => {
+        return munic.key === idMunicipio
+      });
+      var cClusters = data.map(function (munic) {
+        if (munic.cluster === selected.cluster) {
+          return munic;
+        }
+      }).filter(function(item) {
+        return item != undefined
+      });
+
+      $('#membros-cluster').empty();
+      var ul = document.createElement('ul');
+      $(cClusters).each(function(i,item) {
+        var li = document.createElement('li');
+        $(li).html(item.munic);
+        $(ul).append(li);
+        $('#membros-cluster').append(ul);
+      });
+    });
+  }
+}
+
 $(document).ready(function() {
   getMunicipiosJson(initMunicipioSelect);
 
@@ -148,10 +236,11 @@ $(document).ready(function() {
     var that = $(this)
     $(".cc-select-municipio").each(function (i, input) {
       $(input).val(that.val());
-      populeMunicipioData(that.val());
-      setClusterMapSelected(that.val());
-      setFilterMapSelected(that.val());
     });
+    populeMunicipioData(that.val());
+    setClusterMapSelected(that.val());
+    setFilterMapSelected(that.val());
+    buildMembrosCluster(that)
   });
 
   $("g[data-municipio]").on('click', function(event) {
@@ -160,6 +249,9 @@ $(document).ready(function() {
     var input = $(this);
     initClusterMap(input);
     initFilterMap(input);
+    clickFilterMap(input);
+    buildMembrosCluster(input);
+
   });
 
   $("#radio").on('change', function () {
