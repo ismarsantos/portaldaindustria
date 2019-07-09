@@ -219,8 +219,10 @@ function buildMembrosCluster(input) {
 
       $('#membros-cluster').empty();
       var ul = document.createElement('ul');
+      ul.classList.add('list-group', 'list-group-flush');
       $(cClusters).each(function(i,item) {
         var li = document.createElement('li');
+        li.classList.add('list-group-item');
         $(li).html(item.munic);
         $(ul).append(li);
         $('#membros-cluster').append(ul);
