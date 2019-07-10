@@ -138,6 +138,11 @@ function populeMunicipioData(idMunicipio) {
           }
         }
       });
+
+      $("span[id*='ran_']").each(function (i, e) { 
+        $(this).text(parseInt($(e).text()));
+      });
+
     });
   }
 }
