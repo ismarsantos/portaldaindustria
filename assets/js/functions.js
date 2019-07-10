@@ -122,7 +122,7 @@ function populeMunicipioData(idMunicipio) {
 
       var keys = Object.keys(municipio);
       $(keys).each(function (i, name) {
-        
+
         var value = municipio[name];
         if (isNumeric(value)) {
           $('#' + name).html(parseFloat(value).toFixed(2));
@@ -139,11 +139,40 @@ function populeMunicipioData(idMunicipio) {
         }
       });
 
-      $("span[id*='ran_']").each(function (i, e) { 
+      $("span[id*='ran_']").each(function (i, e) {
         $(this).text(parseInt($(e).text()));
       });
 
+      populateRulerValues(data, municipio);
+
     });
+  }
+}
+
+function populateRulerValues(data, municipio) {
+
+  var session = $('#menu-session').data('session');
+
+  if (session === 'infraestrutura') {
+    $('#menor-val-cl').text(parseFloat(municipio.cmin_infra).toFixed(1));
+    $('#media-val-cl').text(parseFloat(municipio.cmed_infra).toFixed(1));
+    $('#munic-val-cl').text(parseFloat(municipio.med_infra).toFixed(1));
+    $('#maior-val-cl').text(parseFloat(municipio.cmax_infra).toFixed(1));
+  } else if (session === 'pontecial de mercado' ) {
+    $('#menor-val-cl').text(parseFloat(municipio.cmin_merc).toFixed(1));
+    $('#media-val-cl').text(parseFloat(municipio.cmed_merc).toFixed(1));
+    $('#munic-val-cl').text(parseFloat(municipio.med_merc).toFixed(1));
+    $('#maior-val-cl').text(parseFloat(municipio.cmax_merc).toFixed(1));
+  } else if (session === 'capital humano' ) {
+    $('#menor-val-cl').text(parseFloat(municipio.cmin_caph).toFixed(1));
+    $('#media-val-cl').text(parseFloat(municipio.cmed_caph).toFixed(1));
+    $('#munic-val-cl').text(parseFloat(municipio.med_caph).toFixed(1));
+    $('#maior-val-cl').text(parseFloat(municipio.cmax_caph).toFixed(1));
+  } else if (session === 'Gestão fiscal' ) {
+    $('#menor-val-cl').text(parseFloat(municipio.cmin_gestfin).toFixed(1));
+    $('#media-val-cl').text(parseFloat(municipio.cmed_gestfin).toFixed(1));
+    $('#munic-val-cl').text(parseFloat(municipio.med_gestfin).toFixed(1));
+    $('#maior-val-cl').text(parseFloat(municipio.cmax_gestfin).toFixed(1));
   }
 }
 
@@ -223,7 +252,7 @@ function clickFilterMap(input) {
 
 function buildMembrosCluster(input) {
   var idMunicipio = $(input).val() || $(input).data('municipio');
-  
+
   if (idMunicipio) {
     getMunicipiosJson(function(data) {
       var selected = data.find(munic => {
@@ -283,6 +312,11 @@ $(document).ready(function() {
         $("#agrupamentos").find('li').remove();
       }
     });
+  });
+
+  $('a[data-toggle="pill"]').on('click', function (e) {
+    var idMunicipio = $(".cc-select-municipio").val();
+    populeMunicipioData(idMunicipio);
   });
 
 });

@@ -8,9 +8,11 @@ $(document).ready(function() {
   $('a[data-toggle="pill"]').on('click', function (e) {
     $('.cc-box-card.active').removeClass("active");
 
-    var menuName = $(this).find('h4').text();
+    var sessionName = $(this).find('h4').text();
 
-    var nTitle = 'Eixo <strong>' + menuName + '</strong> de&nbsp;<span data-municipio="" class="municipioName">' + $('.municipioName').text() + '</span>';
+    $('#menu-session').data('session', sessionName.toLowerCase());
+
+    var nTitle = 'Eixo <strong>' + sessionName + '</strong> de&nbsp;<span data-municipio="" class="municipioName">' + $('.municipioName').text() + '</span>';
 
     $('.cc-titulo-principal').html('');
 
@@ -155,9 +157,11 @@ $(document).ready(function() {
       slider.setAttribute('disabled', true);
       var menor = document.createElement('span');
       menor.innerHTML = "Menor do Cluster";
+      menor.setAttribute('data-', '');
 
       var media = document.createElement('span');
       media.innerHTML = "Média do Cluster";
+      media.setAttribute('data-', '');
 
       var municipio = document.createElement('span');
       municipio.innerHTML = "Vitoria";
@@ -165,6 +169,7 @@ $(document).ready(function() {
 
       var maior = document.createElement('span');
       maior.innerHTML = "Maior do Cluster";
+      maior.setAttribute('data-', '');
 
       menor.classList.add('cc-legenda-cluster', 'cc-cor-roxo');
       media.classList.add('cc-legenda-cluster', 'cc-cor-cinza');
@@ -177,16 +182,20 @@ $(document).ready(function() {
       $($('.noUi-handle')[3]).parent().prepend(maior);
 
       var menorValor = document.createElement('span');
-      menorValor.innerHTML = "1,2";
+      menorValor.innerHTML = "0,0";
+      menorValor.id = "menor-val-cl";
 
       var mediaValor = document.createElement('span');
-      mediaValor.innerHTML = "1,2";
+      mediaValor.innerHTML = "0,0";
+      mediaValor.id = "media-val-cl";
 
       var municipioValor = document.createElement('span');
-      municipioValor.innerHTML = "1,2";
+      municipioValor.innerHTML = "0,0";
+      municipioValor.id = "munic-val-cl";
 
       var maiorValor = document.createElement('span');
-      maiorValor.innerHTML = "1,2";
+      maiorValor.innerHTML = "0,0";
+      maiorValor.id = "maior-val-cl";
 
       menorValor.classList.add('cc-valor', 'cc-color-roxo');
       mediaValor.classList.add('cc-valor', 'cc-color-cinza');
