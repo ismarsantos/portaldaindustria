@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/pace.css">
+    <link rel="stylesheet" href="assets/css/nouislider.css">
 </head>
 
 <body>
@@ -216,7 +217,7 @@
                                     </li>
                                     <li class="nav-item" role="presentation">
                                       <a class="nav-link cc-custom-link" id="pills-infra-tab" data-toggle="pill" href="#v-pills-infra" role="tab" aria-controls="v-pills-infra" aria-selected="false">
-                                        <span class="cc-imagem-texto"><img class="img-fluid" src="assets/img/icone-moeda.png">&nbsp;Infra estrutura</span>
+                                        <span class="cc-imagem-texto"><img class="img-fluid" src="assets/img/icone-moeda.png">&nbsp;Infraestrutura</span>
                                         <span data-cpos_infra="" class="cc-ranking">0,0</span>
                                         <span data-infra="" class="cc-pontuacao">0,0</span>
                                         <div class="clearfix"></div>
@@ -242,8 +243,21 @@
                               </div>
                             </div>
                             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                              <a class="" id="v-pills-mercado-tab" data-toggle="pill" href="#v-pills-mercado" role="tab" aria-controls="v-pills-mercado" aria-selected="true">
+                              
+                              <a class="" id="v-pills-infra-tab" data-toggle="pill" href="#v-pills-infra" role="tab" aria-controls="v-pills-infra" aria-selected="true">
                                 <div class="cc-box-card active">
+                                  <span data-cpos_infra="" class="d-block cc-ranking">0,0</span>
+                                  <span data-infra="" class="d-block cc-pontuacao">0,0</span>
+
+                                  <div class="clearfix"></div>
+                                  <div class="cc-descricao">
+                                    <figure class="figure cc-box-imagem"><img class="img-fluid figure-img" src="assets/img/produzir-menu-infra.png"></figure>
+                                    <h4 class="cc-titulo-menu-eixo">Infraestrutura</h4>
+                                  </div>
+                                </div>
+                              </a>
+                              <a class="" id="v-pills-mercado-tab" data-toggle="pill" href="#v-pills-mercado" role="tab" aria-controls="v-pills-mercado" aria-selected="false">
+                                <div class="cc-box-card">
                                   <span data-cpos_merc="" class="d-block cc-ranking">0,0</span>
                                   <span data-merc="" class="d-block cc-pontuacao">0,0</span>
 
@@ -274,19 +288,7 @@
                                   <div class="clearfix"></div>
                                   <div class="cc-descricao">
                                     <figure class="figure cc-box-imagem"><img class="img-fluid figure-img" src="assets/img/produzir-menu-gestao.png"></figure>
-                                    <h4 class="cc-titulo-menu-eixo">Gestão fical</h4>
-                                  </div>
-                                </div>
-                              </a>
-                              <a class="" id="v-pills-infra-tab" data-toggle="pill" href="#v-pills-infra" role="tab" aria-controls="v-pills-infra" aria-selected="false">
-                                <div class="cc-box-card">
-                                  <span data-cpos_infra="" class="d-block cc-ranking">0,0</span>
-                                  <span data-infra="" class="d-block cc-pontuacao">0,0</span>
-
-                                  <div class="clearfix"></div>
-                                  <div class="cc-descricao">
-                                    <figure class="figure cc-box-imagem"><img class="img-fluid figure-img" src="assets/img/produzir-menu-infra.png"></figure>
-                                    <h4 class="cc-titulo-menu-eixo">Infra estrutura</h4>
+                                    <h4 class="cc-titulo-menu-eixo">Gestão fiscal</h4>
                                   </div>
                                 </div>
                               </a>
@@ -299,14 +301,16 @@
                     <div class="col-lg-9">
                         <div class="row">
                             <div class="col-12">
-                                <div class="cc-regua">
-                                    <div class="cc-alinha-items">
+                                <div class="cc-regua-grande">
+                                    <div id="slider">
+                                      </div>
+                                    <!-- <div class="cc-alinha-items">
                                         <div class="cc-box-valores"><span class="cc-legenda-cluster cc-cor-roxo">Menor do cluster</span><span id="cmin_ian" class="cc-valor cc-cor-roxo">1,2</span></div>
                                         <div class="cc-box-valores"><span class="cc-legenda-cluster cc-cor-cinza">Média do cluster</span><span id="cmed_ian" class="cc-valor cc-cor-cinza">1,2</span></div>
                                         <div class="cc-box-valores"><span class="cc-legenda-cluster cc-cor-marrom municipioName">Vitória</span><span id="cpos_ian" class="cc-valor cc-cor-marrom">1,2</span></div>
                                         <div class="cc-box-valores"><span class="cc-legenda-cluster cc-cor-roxo">Maior do cluster</span><span id="cmax_ian" class="cc-valor cc-cor-roxo">1,2</span></div>
                                     </div>
-                                    <div class="cc-linha"></div>
+                                    <div class="cc-linha"></div> -->
                                 </div>
                             </div>
                             <div class="col-md-7">
@@ -781,6 +785,8 @@
                       <!-- ------------------------------------------------------------ -->
                       <div class="cc-box-acordion-eixo">
                         <div class="cc-regua">
+                            <!-- <div class="sliders">
+                              </div> -->
                           <div class="cc-alinha-items">
                             <div class="cc-box-valores">
                               <!-- ------------------------------------------------------------ -->
@@ -835,7 +841,7 @@
                             </div>
                             <div class="cc-box-valores">
                               <!-- ------------------------------------------------------------ -->
-                              <span data-municipio="" class="cc-legenda-cluster cc-cor-marrom"></span>
+                              <span data-municipio="" class="cc-legenda-cluster cc-cor-marrom">Nome</span>
                               <span id="invest_bndes" class="cc-valor cc-cor-marrom"></span>
                               <!-- ------------------------------------------------------------ -->
                             </div>
@@ -3269,29 +3275,6 @@
                             <div class="cc-regua">
                                 <div class="cc-box-cabecalho">
                                     <div class="d-flex align-items-center float-left">
-                                      <img class="cc-icone" src="assets/img/produzir-menu-gestao.png">
-                                      <h4 class="cc-titulo">Gestão fiscal</h4>
-                                    </div>
-                                    <span id="gfiscal-ranking" class="d-block cc-ranking">0,0</span>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="cc-alinha-items">
-                                    <div class="cc-box-valores">
-                                      <span class="cc-legenda-cluster cc-cor-cinza">Média do cluster</span>
-                                      <span id="gfiscal-media" class="cc-valor cc-cor-cinza">1,2</span>
-                                    </div>
-                                    <div class="cc-box-valores">
-                                      <span class="cc-legenda-cluster cc-cor-marrom">Vitória</span>
-                                      <span id="gfiscal-pos" class="cc-valor cc-cor-marrom">1,2</span>
-                                    </div>
-                                </div>
-                                <div class="cc-linha" style="margin-bottom: 30px;"></div>
-                            </div>
-                        </div>
-                        <div class="cc-eixo-sidebar">
-                            <div class="cc-regua">
-                                <div class="cc-box-cabecalho">
-                                    <div class="d-flex align-items-center float-left">
                                       <img class="cc-icone" src="assets/img/icone-moeda.png">
                                       <h4 class="cc-titulo">Potencial de mercado</h4>
                                     </div>
@@ -3334,6 +3317,29 @@
                                 <div class="cc-linha" style="margin-bottom: 30px;"></div>
                             </div>
                         </div>
+                        <div class="cc-eixo-sidebar">
+                            <div class="cc-regua">
+                                <div class="cc-box-cabecalho">
+                                    <div class="d-flex align-items-center float-left">
+                                      <img class="cc-icone" src="assets/img/produzir-menu-gestao.png">
+                                      <h4 class="cc-titulo">Gestão fiscal</h4>
+                                    </div>
+                                    <span id="gfiscal-ranking" class="d-block cc-ranking">0,0</span>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="cc-alinha-items">
+                                    <div class="cc-box-valores">
+                                      <span class="cc-legenda-cluster cc-cor-cinza">Média do cluster</span>
+                                      <span id="gfiscal-media" class="cc-valor cc-cor-cinza">1,2</span>
+                                    </div>
+                                    <div class="cc-box-valores">
+                                      <span class="cc-legenda-cluster cc-cor-marrom">Vitória</span>
+                                      <span id="gfiscal-pos" class="cc-valor cc-cor-marrom">1,2</span>
+                                    </div>
+                                </div>
+                                <div class="cc-linha" style="margin-bottom: 30px;"></div>
+                            </div>
+                        </div>                       
                     </div>
                 </div>
             </div>
@@ -3617,6 +3623,7 @@
     <script src="assets/js/ResizeSensor.js"></script>
     <script src="assets/js/sticky-sidebar.min.js"></script>
     <script src="assets/js/pace.min.js"></script>
+    <script src="assets/js/nouislider.js"></script>
     <script src="assets/js/custom.js"></script>
     <script src="assets/js/functions.js"></script>
   </body>

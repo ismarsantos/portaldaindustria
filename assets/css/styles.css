@@ -242,7 +242,7 @@
   .cc-box-card-menu .cc-box-card .cc-descricao .cc-titulo-menu-eixo {
     font-size: 18px;
     text-transform: uppercase;
-    color: color: rgb(45, 48, 145);
+    /* color: color: rgb(45, 48, 145); */
     color: rgb(45, 48, 145);
     font-weight: 300;
     display: inline-block;
@@ -301,6 +301,22 @@
 
 .cc-box-card-menu {
   height: 615px;
+}
+
+.cc-regua-grande {
+  background: #fff;
+  border-radius: 4px;
+  height: 120px;
+  padding: 0;
+}
+
+@media (min-width: 576px) {
+  .cc-regua-grande {
+    background: #fff;
+    border-radius: 4px;
+    height: 120px;
+    padding: 0px 30px;
+  }
 }
 
 .cc-regua {
@@ -410,8 +426,220 @@
     background-color: #8E8FBD;
     border-radius: 50%;
     position: absolute;
-    bottom: -36px;
+    bottom: -30px;
     left: 47%;
+  }
+}
+
+.cc-regua .cc-legenda-cluster.cc-cor-marrom:after {
+  background-color: #c9a471;
+}
+
+.cc-regua .cc-legenda-cluster.cc-cor-marrom:before {
+  border-top: 8px solid #c9a471;
+}
+
+.cc-regua .cc-legenda-cluster.cc-cor-cinza:after {
+  background-color: #a1a1a1;
+}
+
+.cc-regua .cc-legenda-cluster.cc-cor-cinza:before {
+  border-top: 8px solid #a1a1a1;
+}
+.cc-regua .cc-legenda-cluster.municipioName:after {
+  bottom: -31px;
+}
+
+.cc-regua .cc-legenda-cluster.municipioName {
+  padding: 9px 10px;
+}
+
+
+
+#slider .cc-legenda-cluster {
+  border-radius: 4px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 20px 10px;
+  padding: 3px 2px;
+  color: #fff;
+  font-size: 8px;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  top: -80px;
+}
+
+@media (min-width: 576px) {
+  #slider .cc-legenda-cluster {
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 20px 10px;
+    padding: 3px 2px;
+    color: #fff;
+    font-size: 8px;
+    font-family: Roboto, sans-serif;
+    top: -64px;
+    white-space: nowrap;
+  }
+}
+
+@media (min-width: 768px) {
+  #slider .cc-legenda-cluster {
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 20px 10px;
+    padding: 3px 10px;
+    color: #fff;
+    font-size: 10px;
+    font-family: Roboto, sans-serif;
+  }
+}
+
+@media (min-width: 992px) {
+  #slider .cc-legenda-cluster {
+    border-radius: 4px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    margin: 20px 10px;
+    padding: 3px 10px;
+    color: #fff;
+    font-size: 13px;
+    font-family: Roboto, sans-serif;
+    top: -72px;
+    white-space: nowrap;
+    min-width: 137.7px;
+  }
+}
+
+#slider .cc-legenda-cluster:before {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #8E8FBD;
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+}
+
+@media (min-width: 576px){
+  #slider .cc-legenda-cluster:before {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid #8E8FBD;
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 38%;
+  }
+}
+
+@media (min-width: 768px){
+  #slider .cc-legenda-cluster:before {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid #8E8FBD;
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 42%;
+  }
+}
+
+@media (min-width: 991px){
+  #slider .cc-legenda-cluster:before {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid #8E8FBD;
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 39%;
+  }
+}
+
+@media (min-width: 1200px){
+  #slider .cc-legenda-cluster:before {
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 8px solid #8E8FBD;
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 44%;
+  }
+}
+
+#slider .cc-legenda-cluster:after {
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #8E8FBD;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -26px;
+  left: 48%;
+}
+
+@media (min-width: 576px) {
+  #slider .cc-legenda-cluster:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #8E8FBD;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -36px;
+    left: 38%;
+  }
+}
+
+@media (min-width: 768px) {
+  #slider .cc-legenda-cluster:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #8E8FBD;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -36px;
+    left: 42%;
+  }
+}
+
+@media (min-width: 991px) {
+  #slider .cc-legenda-cluster:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #8E8FBD;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -36px;
+    left: 41%;
+  }
+}
+
+@media (min-width: 1200px) {
+  #slider .cc-legenda-cluster:after {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    background-color: #8E8FBD;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -36px;
+    left: 43%;
   }
 }
 
@@ -430,19 +658,19 @@
   color: #c9a471;
 }
 
-.cc-regua .cc-legenda-cluster.cc-cor-marrom:after {
+#slider .cc-legenda-cluster.cc-cor-marrom:after {
   background-color: #c9a471;
 }
 
-.cc-regua .cc-legenda-cluster.cc-cor-marrom:before {
+#slider .cc-legenda-cluster.cc-cor-marrom:before {
   border-top: 8px solid #c9a471;
 }
 
-.cc-regua .cc-legenda-cluster.cc-cor-cinza:after {
+#slider .cc-legenda-cluster.cc-cor-cinza:after {
   background-color: #a1a1a1;
 }
 
-.cc-regua .cc-legenda-cluster.cc-cor-cinza:before {
+#slider .cc-legenda-cluster.cc-cor-cinza:before {
   border-top: 8px solid #a1a1a1;
 }
 
@@ -545,7 +773,7 @@
 }
 
 .cc-box-clusters .cc-box-cluster .cc-content-cluster {
-  background-color: #d6d6d6;
+  /* background-color: #d6d6d6; */
   margin: 20px 15px;
   border-radius: 5px;
   color: #000;
@@ -660,7 +888,6 @@
   text-align-last: center;
   font-family: Roboto, sans-serif;
   padding: 10px 0;
-  margin-bottom: 10px;
 }
 
 .cc-section-borda .col-6 {
@@ -718,6 +945,7 @@
   font-family: Roboto, sans-serif;
   color: #313131;
   margin-bottom: 30px;
+  text-align: justify;
 }
 
 #cc-section-tres .cc-box-descricao .cc-titulo {
@@ -728,6 +956,13 @@
   font-weight: 300;
   font-family: Roboto, sans-serif;
   letter-spacing: -1px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  #cc-section-tres .cc-box-descricao .cc-titulo {
+    text-align: left;
+  }
 }
 
 @media (min-width: 768px) {
@@ -2034,7 +2269,7 @@
   color: rgb(45, 48, 145);
   text-transform: uppercase;
   line-height: 30px;
-  font-weight: 400;
+  font-weight: 300;
   margin: 20px 0;
 }
 
@@ -2045,7 +2280,7 @@
 
 @media (min-width: 576px) {
   .cc-div-categorias .cc-titulo-padrao {
-    font-size: 27px;
+    font-size: 22px;
     text-align: left;
   }
 }
@@ -2064,6 +2299,7 @@
   background-color: #e7e8ea;
   position: relative;
   padding-right: 15px;
+  font-size: 18px;
 }
 
 .cc-div-categorias .cc-eixo .cc-header .cc-titulo-padrao i {
@@ -2106,6 +2342,7 @@
   color: rgb(102,102,102);
   text-transform: uppercase;
   text-align: center;
+  height: 40px;
 }
 
 @media (min-width: 576px) {
@@ -2131,7 +2368,7 @@
 @media (min-width: 992px) {
   .cc-div-categorias .cc-eixo .cc-content .cc-conteudo h1 {
     font-family: Roboto, sans-serif;
-    font-size: 17px;
+    font-size: 13px;
     color: rgb(102,102,102);
     text-transform: uppercase;
     text-align: center;
@@ -2198,6 +2435,7 @@
 @media (min-width: 992px) {
   .cc-div-categorias .cc-eixo .cc-content .cc-conteudo .cc-regua {
     padding: 0 15px;
+    padding-bottom: 130px;
     background-color: #f3f3f3;
     height: 115px;
     border-radius: 5px 5px 0 0;
@@ -2207,6 +2445,7 @@
 @media (min-width: 1200px) {
   .cc-div-categorias .cc-eixo .cc-content .cc-conteudo .cc-regua {
     padding: 0 15px;
+    padding-bottom: 130px;
     background-color: #f3f3f3;
     height: 105px;
     border-radius: 5px 5px 0 0;
@@ -3593,7 +3832,7 @@
 
 @media (min-width: 768px) {
   .cc-case-praticas .cc-titulo-padrao {
-    font-size: 27px;
+    font-size: 22px;
     text-align: left;
   }
 }
@@ -4056,11 +4295,11 @@
   bottom: -35px;
 }
 
-.cc-regua .cc-legenda-cluster.municipioName:after {
+#slider .cc-legenda-cluster.municipioName:after {
   bottom: -31px;
 }
 
-.cc-regua .cc-legenda-cluster.municipioName {
+#slider .cc-legenda-cluster.municipioName {
   padding: 9px 10px;
 }
 
@@ -4075,4 +4314,103 @@ sidebar {
   transform: translate(0, 0); /* For browsers don't support translate3d. */
   transform: translate3d(0, 0, 0);
   will-change: position, transform;
+}
+
+#slider{
+  top: 50%;
+}
+
+.noUi-handle:focus{
+  outline: none;
+}
+
+.cc-color-roxo{
+  color: #8E8FBD;
+}
+
+.cc-color-marrom{
+  color: #c9a471;
+}
+
+.cc-color-cinza{
+  color: #a1a1a1;
+}
+
+#slider span.cc-valor {
+  position: relative;
+  top: -68px;
+  left: 30px;
+  margin: auto;
+}
+
+@media (min-width: 576px){
+  #slider span.cc-valor {
+    position: relative;
+    top: -40px;
+    left: 40px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 768px){
+  #slider span.cc-valor {
+    position: relative;
+    top: -40px;
+    left: 58px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 991px){
+  #slider span.cc-valor {
+    position: relative;
+    top: -40px;
+    left: 58px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1200px){
+  #slider span.cc-valor {
+    position: relative;
+    top: -40px;
+    left: 72px;
+    margin: auto;
+  }
+}
+
+#slider .cc-municipio{
+  top: -55px;
+}
+
+@media (min-width: 576px){
+  #slider .cc-municipio{
+    top: -64px;
+    left: 15px;
+  }
+}
+
+@media (min-width: 768px){
+  #slider .cc-municipio{
+    top: -68px;
+    left: 21px;
+  }
+}
+
+@media (min-width: 991px){
+  #slider .cc-municipio{
+    top: -68px;
+    left: 24px;
+  }
+}
+
+@media (min-width: 1200px){
+  #slider .cc-municipio{
+    top: -72px;
+    left: initial;
+  }
+}
+
+#slider .cc-valor-municipio{
+   top: -44px !important;
 }

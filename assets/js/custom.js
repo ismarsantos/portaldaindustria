@@ -133,5 +133,60 @@ $(document).ready(function() {
   //         console.log("nãoc hecado");
   //     }
   // });
+
+  var slider = document.getElementById('slider');
+
+      noUiSlider.create(slider, {
+          start: [2000, 4000, 6000, 8000],
+          range: {
+            'min': [0],
+            'max': [10000]
+          }
+      });
+
+      // slider.setAttribute('disabled', true);
+      var menor = document.createElement('span');
+      menor.innerHTML = "Menor do Cluster";
+
+      var media = document.createElement('span');
+      media.innerHTML = "Média do Cluster";
+
+      var municipio = document.createElement('span');
+      municipio.innerHTML = "Vitoria";
+
+      var maior = document.createElement('span');
+      maior.innerHTML = "Maior do Cluster";
+
+      menor.classList.add('cc-legenda-cluster', 'cc-cor-roxo');
+      media.classList.add('cc-legenda-cluster', 'cc-cor-cinza');
+      municipio.classList.add('cc-legenda-cluster', 'cc-cor-marrom', 'cc-municipio');
+      maior.classList.add('cc-legenda-cluster', 'cc-cor-roxo');
+
+      $($('.noUi-handle')[0]).parent().prepend(menor);
+      $($('.noUi-handle')[1]).parent().prepend(media);
+      $($('.noUi-handle')[2]).parent().prepend(municipio);
+      $($('.noUi-handle')[3]).parent().prepend(maior);
+
+      var menorValor = document.createElement('span');
+      menorValor.innerHTML = "1,2";
+
+      var mediaValor = document.createElement('span');
+      mediaValor.innerHTML = "1,2";
+
+      var municipioValor = document.createElement('span');
+      municipioValor.innerHTML = "1,2";
+
+      var maiorValor = document.createElement('span');
+      maiorValor.innerHTML = "1,2";
+
+      menorValor.classList.add('cc-valor', 'cc-color-roxo');
+      mediaValor.classList.add('cc-valor', 'cc-color-cinza');
+      municipioValor.classList.add('cc-valor', 'cc-color-marrom', 'cc-valor-municipio');
+      maiorValor.classList.add('cc-valor', 'cc-color-roxo');
+
+      $($('.noUi-handle')[0]).parent().append(menorValor);
+      $($('.noUi-handle')[1]).parent().append(mediaValor);
+      $($('.noUi-handle')[2]).parent().append(municipioValor);
+      $($('.noUi-handle')[3]).parent().append(maiorValor);
 });
 
