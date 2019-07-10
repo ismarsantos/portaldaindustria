@@ -127,7 +127,12 @@ function populeMunicipioData(idMunicipio) {
         if (isNumeric(value)) {
           $('#' + name).html(parseFloat(value).toFixed(2));
           var nValue = parseFloat(value).toFixed(1);
-          if (nValue.length > 3) {
+          if (nValue.length > 3 ||
+            name === 'cpos_ian' ||
+            name === 'cpos_infra' ||
+            name === 'cpos_merc' ||
+            name === 'cpos_caph' ||
+            name === 'cpos_gestfin') {
             nValue = parseInt(nValue);
           }
           $('span[data-'+ name +']').html(nValue.toString().replace(".", ","));
