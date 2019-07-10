@@ -122,7 +122,6 @@ function populeMunicipioData(idMunicipio) {
 
       var keys = Object.keys(municipio);
       $(keys).each(function (i, name) {
-
         var value = municipio[name];
         if (isNumeric(value)) {
           $('#' + name).html(parseFloat(value).toFixed(2));
@@ -285,8 +284,46 @@ function buildMembrosCluster(input) {
   }
 }
 
+function populateTexts(data) {
+  var municipioSelected = $(".cc-select-municipio").val();
+  var municipio
+  if (municipioSelected) {
+    municipio = data.find(obj => {
+      return obj.key === municipioSelected
+    });
+  } else {
+    municipio = data[0];
+  }
+
+  var keys = Object.keys(municipio);
+  $(keys).each(function (i, name) {
+    $('.'+ name).html(municipio[name]);
+  });
+
+  var session = $('#menu-session').data('session');
+  var texto1 = $('.texto1');
+  var texto2 = $('.texto2');
+  if (session === 'infraestrutura') {
+    texto1.html(municipio['texto1_infra']);
+    texto2.html(municipio['texto2_infra']);
+  }
+  if (session === 'pontecial de mercado') {
+    texto1.html(municipio['texto1_potencial_de_mercado']);
+    texto2.html(municipio['texto2_potencial_de_mercado']);
+  }
+  if (session === 'capital humano') {
+    texto1.html(municipio['texto1_capital_humano']);
+    texto2.html(municipio['texto2_capital_humano']);
+  }
+  if (session === 'gestão fiscal') {
+    texto1.html(municipio['texto1_gestao_fiscal']);
+    texto2.html(municipio['texto2_gestao_fiscal']);
+  }
+}
+
 $(document).ready(function() {
   getMunicipiosJson(initMunicipioSelect);
+  getMunicipiosJson(populateTexts);
 
   $(".cc-select-municipio").on('change', function () {
     var that = $(this)
@@ -322,6 +359,7 @@ $(document).ready(function() {
   $('a[data-toggle="pill"]').on('click', function (e) {
     var idMunicipio = $(".cc-select-municipio").val();
     populeMunicipioData(idMunicipio);
+    getMunicipiosJson(populateTexts);
   });
 
 });

@@ -300,7 +300,7 @@
 }
 
 .cc-box-card-menu {
-  height: 615px;
+  height: 670px;
 }
 
 .cc-regua-grande {
@@ -723,7 +723,8 @@
   color: rgb(102, 102, 102);
 }
 
-.cc-como-funciona ul li {
+.cc-como-funciona .texto1,
+.cc-como-funciona .texto2  {
   font-size: 18px;
   color: #2A3091;
   font-weight: 200;
