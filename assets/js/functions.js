@@ -168,7 +168,7 @@ function populateRulerValues(data, municipio) {
     $('#media-val-cl').text(parseFloat(municipio.cmed_caph).toFixed(1));
     $('#munic-val-cl').text(parseFloat(municipio.med_caph).toFixed(1));
     $('#maior-val-cl').text(parseFloat(municipio.cmax_caph).toFixed(1));
-  } else if (session === 'Gestão fiscal' ) {
+  } else if (session === 'gestão fiscal' ) {
     $('#menor-val-cl').text(parseFloat(municipio.cmin_gestfin).toFixed(1));
     $('#media-val-cl').text(parseFloat(municipio.cmed_gestfin).toFixed(1));
     $('#munic-val-cl').text(parseFloat(municipio.med_gestfin).toFixed(1));
