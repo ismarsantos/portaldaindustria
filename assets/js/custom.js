@@ -1,8 +1,8 @@
 $(document).ready(function() {
   var sidebar = document.getElementById('sidebar');
   var stickySidebar = new StickySidebar(sidebar, {
-    topSpacing: 20,
-    bottomSpacing: 300,
+    topSpacing: 0,
+    bottomSpacing: 0
   });
 
   $('a[data-toggle="pill"]').on('click', function (e) {
