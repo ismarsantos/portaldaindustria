@@ -161,6 +161,7 @@ $(document).ready(function() {
 
       var municipio = document.createElement('span');
       municipio.innerHTML = "Vitoria";
+      municipio.setAttribute('data-municipio', 'Vitoria');
 
       var maior = document.createElement('span');
       maior.innerHTML = "Maior do Cluster";

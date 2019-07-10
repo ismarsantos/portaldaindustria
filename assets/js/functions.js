@@ -122,13 +122,28 @@ function populeMunicipioData(idMunicipio) {
 
       var keys = Object.keys(municipio);
       $(keys).each(function (i, name) {
-        $('#' + name).html(municipio[name]);
-        $('span[data-'+ name +']').html(municipio[name]);
-        if (name === 'munic')
-          $('span[data-municipio]').html(municipio.munic);
+        
+        var value = municipio[name];
+        if (isNumeric(value)) {
+          $('#' + name).html(parseFloat(value).toFixed(2));
+          var nValue = parseFloat(value).toFixed(1);
+          if (nValue.length > 3) {
+            nValue = parseInt(nValue);
+          }
+          $('span[data-'+ name +']').html(nValue.toString().replace(".", ","));
+        } else {
+          $('#' + name).html(value);
+          if (name === 'munic'){
+            $('span[data-municipio]').html(municipio.munic);
+          }
+        }
       });
     });
   }
+}
+
+function isNumeric(n) {
+  return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
 function setClusterMapSelected(idMunicipio) {
