@@ -7,11 +7,19 @@ $(document).ready(function() {
 
   $('a[data-toggle="pill"]').on('click', function (e) {
     $('.cc-box-card.active').removeClass("active");
-    $('html, body').animate({
-        scrollTop: $("#categorias").offset().top
-    }, 0);
+
+    var menuName = $(this).find('h4').text();
+
+    var nTitle = 'Eixo <strong>' + menuName + '</strong> de&nbsp;<span data-municipio="" class="municipioName">' + $('.municipioName').text() + '</span>';
+
+    $('.cc-titulo-principal').html('');
+
+    $('.cc-titulo-principal').html(nTitle);
+
     $(this).find(">:first-child").addClass("active");
+
     stickySidebar.updateSticky();
+
     setTimeout(function () {
       stickySidebar.updateSticky();
     }, 1000);
@@ -144,7 +152,7 @@ $(document).ready(function() {
           }
       });
 
-      // slider.setAttribute('disabled', true);
+      slider.setAttribute('disabled', true);
       var menor = document.createElement('span');
       menor.innerHTML = "Menor do Cluster";
 
