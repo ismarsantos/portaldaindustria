@@ -4413,5 +4413,9 @@ sidebar {
 }
 
 #slider .cc-valor-municipio{
-   top: -44px !important;
+  top: -44px !important;
+}
+
+#membros-cluster .list-group-item:hover {
+  background-color: #f3f3f3;
 }
