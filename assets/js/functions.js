@@ -147,37 +147,62 @@ function populeMunicipioData(idMunicipio) {
         $(this).text(parseInt($(e).text()));
       });
 
-      populateRulerValues(data, municipio);
+      populateRulerValues(municipio);
 
     });
   }
 }
 
-function populateRulerValues(data, municipio) {
+function populateRulerValues(municipio) {
 
   var session = $('#menu-session').data('session');
 
   if (session === 'infraestrutura') {
-    $('#menor-val-cl').text(parseFloat(municipio.cmin_infra).toFixed(1));
-    $('#media-val-cl').text(parseFloat(municipio.cmed_infra).toFixed(1));
-    $('#munic-val-cl').text(parseFloat(municipio.med_infra).toFixed(1));
-    $('#maior-val-cl').text(parseFloat(municipio.cmax_infra).toFixed(1));
+    setRuler(
+      municipio.cmin_infra,
+      municipio.cmed_infra,
+      municipio.med_infra,
+      municipio.cmax_infra
+    )
   } else if (session === 'pontecial de mercado' ) {
-    $('#menor-val-cl').text(parseFloat(municipio.cmin_merc).toFixed(1));
-    $('#media-val-cl').text(parseFloat(municipio.cmed_merc).toFixed(1));
-    $('#munic-val-cl').text(parseFloat(municipio.med_merc).toFixed(1));
-    $('#maior-val-cl').text(parseFloat(municipio.cmax_merc).toFixed(1));
+    setRuler(
+      municipio.cmin_merc,
+      municipio.cmed_merc,
+      municipio.med_merc,
+      municipio.cmax_merc
+    )
   } else if (session === 'capital humano' ) {
-    $('#menor-val-cl').text(parseFloat(municipio.cmin_caph).toFixed(1));
-    $('#media-val-cl').text(parseFloat(municipio.cmed_caph).toFixed(1));
-    $('#munic-val-cl').text(parseFloat(municipio.med_caph).toFixed(1));
-    $('#maior-val-cl').text(parseFloat(municipio.cmax_caph).toFixed(1));
+    setRuler(
+      municipio.cmin_caph,
+      municipio.cmed_caph,
+      municipio.med_caph,
+      municipio.cmax_caph
+    )
   } else if (session === 'gestão fiscal' ) {
-    $('#menor-val-cl').text(parseFloat(municipio.cmin_gestfin).toFixed(1));
-    $('#media-val-cl').text(parseFloat(municipio.cmed_gestfin).toFixed(1));
-    $('#munic-val-cl').text(parseFloat(municipio.med_gestfin).toFixed(1));
-    $('#maior-val-cl').text(parseFloat(municipio.cmax_gestfin).toFixed(1));
+    setRuler(
+      municipio.cmin_gestfin,
+      municipio.cmed_gestfin,
+      municipio.med_gestfin,
+      municipio.cmax_gestfin
+    )
   }
+}
+
+function setRuler(menorVal, medVal, municVal, maiorVal) {
+  var slider = document.getElementById('slider');
+
+  $('#menor-val-cl').text(parseFloat(menorVal).toFixed(1));
+  $('#media-val-cl').text(parseFloat(medVal).toFixed(1));
+  $('#munic-val-cl').text(parseFloat(municVal).toFixed(1));
+  $('#maior-val-cl').text(parseFloat(maiorVal).toFixed(1));
+
+  var menorVal = parseFloat(menorVal).toFixed(1) * 10.0;
+  var medVal = parseFloat(medVal).toFixed(1) * 20.0;
+  var municVal = parseFloat(municVal).toFixed(1) * 40.0;
+  var maiorVal = parseFloat(maiorVal).toFixed(1) * 60.0;
+
+  console.log([menorVal, medVal, municVal, maiorVal])
+  slider.noUiSlider.set([menorVal, medVal, municVal, maiorVal])
 }
 
 function isNumeric(n) {
@@ -333,7 +358,7 @@ $(document).ready(function() {
     populeMunicipioData(that.val());
     setClusterMapSelected(that.val());
     setFilterMapSelected(that.val());
-    buildMembrosCluster(that)
+    buildMembrosCluster(that);
   });
 
   $("g[data-municipio]").on('click', function(event) {
@@ -362,6 +387,14 @@ $(document).ready(function() {
     getMunicipiosJson(populateTexts);
   });
 
+  setTimeout(function () {
+    var input = $(".cc-select-municipio")
+    input.val('vitoria');
+    populeMunicipioData('vitoria');
+    setClusterMapSelected('vitoria');
+    setFilterMapSelected('vitoria');
+    buildMembrosCluster(input[0]);
+  }, 1000);
 });
 
 
