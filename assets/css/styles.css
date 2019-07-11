@@ -1093,6 +1093,7 @@
   font-family: Roboto, sans-serif;
   font-size: 13px;
   text-align: justify;
+  height: 100%;
   /*background-color: #fff;*/
   /*padding: 20px 15px;*/
   /*border-radius: 5px;*/
@@ -1333,6 +1334,7 @@
   font-size: 13px;
   text-align: justify;
   margin-top: 40px;
+  height: 100%;
 }
 
 @media (min-width: 576px) {
@@ -3119,6 +3121,7 @@
   color: rgb(45, 48, 145);
   font-weight: 300;
   line-height: 14px;
+  word-break: break-word;
 }
 
 .cc-box-galeria .cc-box-img-conteudo .cc-informacoes .cc-nota-raking .cc-ranking {
@@ -4278,6 +4281,7 @@
   padding: 20px 15px;
   border-radius: 5px;
   margin: 0;
+  height: 100%;
 }
 
 .cc-box-entre-em-contato .cc-box-pdf {
@@ -4413,9 +4417,5 @@ sidebar {
 }
 
 #slider .cc-valor-municipio{
-  top: -44px !important;
-}
-
-#membros-cluster .list-group-item:hover {
-  background-color: #f3f3f3;
+   top: -44px !important;
 }
