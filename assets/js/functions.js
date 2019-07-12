@@ -119,6 +119,7 @@ function populeMunicipioData(idMunicipio) {
 
     if (municipio) {
       // $('img#mapa-json').attr("src","assets/img/mapa-cluster-" + municipio.key + ".png");
+      populateRulerValues(municipio);
 
       var keys = Object.keys(municipio);
       $(keys).each(function (i, name) {
@@ -142,8 +143,6 @@ function populeMunicipioData(idMunicipio) {
       $("span[id*='ran_']").each(function (i, e) {
         $(this).text(parseInt($(e).text()));
       });
-
-      populateRulerValues(municipio);
     }
   });
 }
@@ -153,31 +152,33 @@ function populateRulerValues(municipio) {
   var session = $('#menu-session').data('session');
 
   if (session === 'infraestrutura') {
+    console.log(municipio.munic);
+    console.log(municipio.med_infra);
     setRuler(
       municipio.cmin_infra,
       municipio.cmed_infra,
-      municipio.med_infra,
+      municipio.infra,
       municipio.cmax_infra
     )
   } else if (session === 'pontecial de mercado' ) {
     setRuler(
       municipio.cmin_merc,
       municipio.cmed_merc,
-      municipio.med_merc,
+      municipio.merc,
       municipio.cmax_merc
     )
   } else if (session === 'capital humano' ) {
     setRuler(
       municipio.cmin_caph,
       municipio.cmed_caph,
-      municipio.med_caph,
+      municipio.caph,
       municipio.cmax_caph
     )
   } else if (session === 'gestão fiscal' ) {
     setRuler(
       municipio.cmin_gestfin,
       municipio.cmed_gestfin,
-      municipio.med_gestfin,
+      municipio.gestfin,
       municipio.cmax_gestfin
     )
   }
