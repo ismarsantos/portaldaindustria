@@ -191,10 +191,10 @@ function setRuler(menorVal, medVal, municVal, maiorVal) {
   $('#munic-val-cl').text(parseFloat(municVal).toFixed(1));
   $('#maior-val-cl').text(parseFloat(maiorVal).toFixed(1));
 
-  var menorVal = parseFloat(menorVal).toFixed(1) * 10.0;
-  var medVal = parseFloat(medVal).toFixed(1) * 20.0;
-  var municVal = parseFloat(municVal).toFixed(1) * 40.0;
-  var maiorVal = parseFloat(maiorVal).toFixed(1) * 60.0;
+  var menorVal = parseFloat(menorVal).toFixed(1);
+  var medVal = parseFloat(medVal).toFixed(1);
+  var municVal = parseFloat(municVal).toFixed(1);
+  var maiorVal = parseFloat(maiorVal).toFixed(1);
 
   console.log([menorVal, medVal, municVal, maiorVal])
   slider.noUiSlider.set([menorVal, medVal, municVal, maiorVal])

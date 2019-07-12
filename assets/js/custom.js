@@ -147,11 +147,11 @@ $(document).ready(function() {
   var slider = document.getElementById('slider');
 
   noUiSlider.create(slider, {
-      start: [200, 400, 600, 800],
+      start: [2.0, 4.0, 6.0, 8.0],
       behaviour: 'unconstrained-tap',
       range: {
-        'min': [0],
-        'max': [1000]
+        'min': [0.0],
+        'max': [10.0]
       }
   });
 
