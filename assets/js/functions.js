@@ -111,13 +111,13 @@ function selectMunicipioOption(idMunicipio) {
 }
 
 function populeMunicipioData(idMunicipio) {
-  if (idMunicipio) {
 
-    getMunicipiosJson(function(data) {
-      var municipio = data.find(obj => {
-        return obj.key === idMunicipio
-      });
+  getMunicipiosJson(function(data) {
+    var municipio = data.find(obj => {
+      return obj.key === idMunicipio
+    });
 
+    if (municipio) {
       // $('img#mapa-json').attr("src","assets/img/mapa-cluster-" + municipio.key + ".png");
 
       var keys = Object.keys(municipio);
@@ -126,15 +126,11 @@ function populeMunicipioData(idMunicipio) {
         if (isNumeric(value)) {
           $('#' + name).html(parseFloat(value).toFixed(2));
           var nValue = parseFloat(value).toFixed(1);
-          if (nValue.length > 3 ||
-            name === 'cpos_ian' ||
-            name === 'cpos_infra' ||
-            name === 'cpos_merc' ||
-            name === 'cpos_caph' ||
-            name === 'cpos_gestfin') {
-            nValue = parseInt(nValue);
+          var prefix = name.toString().split('_')[0];
+          if (prefix === 'cpos'){
+            nValue = parseInt(nValue).toString() + '\u00BA';
           }
-          $('span[data-'+ name +']').html(nValue.toString().replace(".", ","));
+          $('span[data-'+ name +']').html(nValue.replace(".", ","));
         } else {
           $('#' + name).html(value);
           if (name === 'munic'){
@@ -148,9 +144,8 @@ function populeMunicipioData(idMunicipio) {
       });
 
       populateRulerValues(municipio);
-
-    });
-  }
+    }
+  });
 }
 
 function populateRulerValues(municipio) {
@@ -230,75 +225,93 @@ function clickFilterMap(input) {
 
       if (selectedValueRadio === 'cluster') {
         // cluster
-        $('#map-ian')         .html(parseFloat(municipio.ian).toFixed(1));
-        $('#ranking')         .html(parseInt(municipio.cpos_ian));
-        $('#infra-ranking')   .html(parseInt(municipio.cpos_infra));
-        $('#infra-media')     .html(parseFloat(municipio.cmed_infra).toFixed(1));
-        $('#infra-pos')       .html(parseFloat(municipio.cpos_infra).toFixed(1));
-        $('#gfiscal-ranking') .html(parseInt(municipio.cpos_gestfin));
-        $('#gfiscal-media')   .html(parseFloat(municipio.cmed_gestfin).toFixed(1));
-        $('#gfiscal-pos')     .html(parseFloat(municipio.cpos_gestfin).toFixed(1));
-        $('#pmercado-ranking').html(parseInt(municipio.cpos_merc));
-        $('#pmercado-media')  .html(parseFloat(municipio.cmed_merc).toFixed(1));
-        $('#pmercado-pos')    .html(parseFloat(municipio.cpos_merc).toFixed(1));
-        $('#chumano-ranking') .html(parseInt(municipio.cpos_caph));
-        $('#chumano-media')   .html(parseFloat(municipio.cmed_caph).toFixed(1));
-        $('#chumano-pos')     .html(parseFloat(municipio.cpos_caph).toFixed(1));
+        setFilterMapValues(
+          municipio.ian,
+          municipio.cpos_ian,
+          municipio.cpos_infra,
+          municipio.cmed_infra,
+          municipio.infra,
+          municipio.cpos_gestfin,
+          municipio.cmed_gestfin,
+          municipio.gestfin,
+          municipio.cpos_merc,
+          municipio.cmed_merc,
+          municipio.merc,
+          municipio.cpos_caph,
+          municipio.cmed_caph,
+          municipio.caph)
       } else if (selectedValueRadio === 'regional') {
         // regional
-        $('#map-ian')         .html(parseFloat(municipio.rpos_ian).toFixed(1));
-        $('#ranking')         .html(parseInt(municipio.regional));
-        $('#infra-ranking')   .html(parseInt(municipio.rpos_infra));
-        $('#infra-media')     .html(parseFloat(municipio.rmed_infra).toFixed(1));
-        $('#infra-pos')       .html(parseFloat(municipio.rpos_infra).toFixed(1));
-        $('#gfiscal-ranking') .html(parseInt(municipio.rpos_gestfin));
-        $('#gfiscal-media')   .html(parseFloat(municipio.rmed_gestfin).toFixed(1));
-        $('#gfiscal-pos')     .html(parseFloat(municipio.rpos_gestfin).toFixed(1));
-        $('#pmercado-ranking').html(parseInt(municipio.rpos_merc));
-        $('#pmercado-media')  .html(parseFloat(municipio.rmed_merc).toFixed(1));
-        $('#pmercado-pos')    .html(parseFloat(municipio.rpos_merc).toFixed(1));
-        $('#chumano-ranking') .html(parseInt(municipio.rpos_caph));
-        $('#chumano-media')   .html(parseFloat(municipio.rmed_caph).toFixed(1));
-        $('#chumano-pos')     .html(parseFloat(municipio.rpos_caph).toFixed(1));
+        setFilterMapValues(
+          municipio.rpos_ian,
+          municipio.regional,
+          municipio.rpos_infra,
+          municipio.rmed_infra,
+          municipio.infra,
+          municipio.rpos_gestfin,
+          municipio.rmed_gestfin,
+          municipio.gestfin,
+          municipio.rpos_merc,
+          municipio.rmed_merc,
+          municipio.merc,
+          municipio.rpos_caph,
+          municipio.rmed_caph,
+          municipio.caph)
       } else {
         // estadual
-        $('#map-ian')         .html(parseFloat(municipio.med_ian).toFixed(1));
-        $('#ranking')         .html(parseInt(municipio.pos_ian));
-        $('#infra-ranking')   .html(parseInt(municipio.pos_ian));
-        $('#infra-media')     .html(parseFloat(municipio.med_infra).toFixed(1));
-        $('#infra-pos')       .html(parseFloat(municipio.pos_ian).toFixed(1));
-        $('#gfiscal-ranking') .html(parseInt(municipio.pos_ian));
-        $('#gfiscal-media')   .html(parseFloat(municipio.med_gestfin).toFixed(1));
-        $('#gfiscal-pos')     .html(parseFloat(municipio.pos_ian).toFixed(1));
-        $('#pmercado-ranking').html(parseInt(municipio.pos_ian));
-        $('#pmercado-media')  .html(parseFloat(municipio.med_merc).toFixed(1));
-        $('#pmercado-pos')    .html(parseFloat(municipio.pos_ian).toFixed(1));
-        $('#chumano-ranking') .html(parseInt(municipio.pos_ian));
-        $('#chumano-media')   .html(parseFloat(municipio.med_caph).toFixed(1));
-        $('#chumano-pos')     .html(parseFloat(municipio.pos_ian).toFixed(1));
+        setFilterMapValues(
+          municipio.med_ian,
+          municipio.pos_ian,
+          municipio.pos_ian,
+          municipio.med_infra,
+          municipio.ian,
+          municipio.pos_ian,
+          municipio.med_gestfin,
+          municipio.ian,
+          municipio.pos_ian,
+          municipio.med_merc,
+          municipio.ian,
+          municipio.pos_ian,
+          municipio.med_caph,
+          municipio.ian)
       }
     });
   }
 }
 
-// function setFilterMapValues(params) {
-//   if (params) {
-//     $('#map-ian')         .html(parseFloat(params.ian).toFixed(1));
-//     $('#ranking')         .html(parseInt(params.ranking));
-//     $('#infra-ranking')   .html(parseInt(params.infraRanking));
-//     $('#infra-media')     .html(parseFloat(params.infraMedia).toFixed(1));
-//     $('#infra-pos')       .html(parseFloat(params.infraPos).toFixed(1));
-//     $('#gfiscal-ranking') .html(parseInt(params.gfiscalRanking));
-//     $('#gfiscal-media')   .html(parseFloat(params.gfiscalMedia).toFixed(1));
-//     $('#gfiscal-pos')     .html(parseFloat(params.gfiscalPos).toFixed(1));
-//     $('#pmercado-ranking').html(parseInt(params.pmercadoRanking));
-//     $('#pmercado-media')  .html(parseFloat(params.pmercadoMedia).toFixed(1));
-//     $('#pmercado-pos')    .html(parseFloat(params.pmercadoPos).toFixed(1));
-//     $('#chumano-ranking') .html(parseInt(params.chumanoRanking));
-//     $('#chumano-media')   .html(parseFloat(params.chumanoMedia).toFixed(1));
-//     $('#chumano-pos')     .html(parseFloat(params.chumanoPos).toFixed(1));
-//   }
-// }
+function setFilterMapValues(
+  ian,
+  ranking,
+  infraRanking,
+  infraMedia,
+  infraPos,
+  gfiscalRanking,
+  gfiscalMedia,
+  gfiscalPos,
+  pmercadoRanking,
+  pmercadoMedia,
+  pmercadoPos,
+  chumanoRanking,
+  chumanoMedia,
+  chumanoPos
+) {
+  // if (params) {
+    $('#map-ian')         .html(parseFloat(ian).toFixed(1));
+    $('#ranking')         .html(parseInt(ranking));
+    $('#infra-ranking')   .html(parseInt(infraRanking));
+    $('#infra-media')     .html(parseFloat(infraMedia).toFixed(1));
+    $('#infra-pos')       .html(parseFloat(infraPos).toFixed(1));
+    $('#gfiscal-ranking') .html(parseInt(gfiscalRanking));
+    $('#gfiscal-media')   .html(parseFloat(gfiscalMedia).toFixed(1));
+    $('#gfiscal-pos')     .html(parseFloat(gfiscalPos).toFixed(1));
+    $('#pmercado-ranking').html(parseInt(pmercadoRanking));
+    $('#pmercado-media')  .html(parseFloat(pmercadoMedia).toFixed(1));
+    $('#pmercado-pos')    .html(parseFloat(pmercadoPos).toFixed(1));
+    $('#chumano-ranking') .html(parseInt(chumanoRanking));
+    $('#chumano-media')   .html(parseFloat(chumanoMedia).toFixed(1));
+    $('#chumano-pos')     .html(parseFloat(chumanoPos).toFixed(1));
+  // }
+}
 
 function buildMembrosCluster(input) {
   var idMunicipio = $(input).val() || $(input).data('municipio');
