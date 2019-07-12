@@ -229,7 +229,7 @@ function clickFilterMap(input) {
 
     if (selectedValueRadio === 'cluster') {
       // cluster
-      $('#ian')             .html(parseFloat(municipio.ian).toFixed(1));
+      $('#map-ian')         .html(parseFloat(municipio.ian).toFixed(1));
       $('#ranking')         .html(parseInt(municipio.cpos_ian));
       $('#infra-ranking')   .html(parseInt(municipio.cpos_infra));
       $('#infra-media')     .html(parseFloat(municipio.cmed_infra).toFixed(1));
@@ -245,7 +245,7 @@ function clickFilterMap(input) {
       $('#chumano-pos')     .html(parseFloat(municipio.cpos_caph).toFixed(1));
     } else if (selectedValueRadio === 'regional') {
       // regional
-      $('#ian')             .html(parseFloat(municipio.rpos_ian).toFixed(1));
+      $('#map-ian')         .html(parseFloat(municipio.rpos_ian).toFixed(1));
       $('#ranking')         .html(parseInt(municipio.regional));
       $('#infra-ranking')   .html(parseInt(municipio.rpos_infra));
       $('#infra-media')     .html(parseFloat(municipio.rmed_infra).toFixed(1));
@@ -261,7 +261,7 @@ function clickFilterMap(input) {
       $('#chumano-pos')     .html(parseFloat(municipio.rpos_caph).toFixed(1));
     } else {
       // estadual
-      $('#ian')             .html(parseFloat(municipio.med_ian).toFixed(1));
+      $('#map-ian')         .html(parseFloat(municipio.med_ian).toFixed(1));
       $('#ranking')         .html(parseInt(municipio.pos_ian));
       $('#infra-ranking')   .html(parseInt(municipio.pos_ian));
       $('#infra-media')     .html(parseFloat(municipio.med_infra).toFixed(1));
