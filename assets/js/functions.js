@@ -152,8 +152,6 @@ function populateRulerValues(municipio) {
   var session = $('#menu-session').data('session');
 
   if (session === 'infraestrutura') {
-    console.log(municipio.munic);
-    console.log(municipio.med_infra);
     setRuler(
       municipio.cmin_infra,
       municipio.cmed_infra,
