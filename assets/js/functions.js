@@ -298,16 +298,16 @@ function setFilterMapValues(
   // if (params) {
     $('#map-ian')         .html(parseFloat(ian).toFixed(1));
     $('#ranking')         .html(parseInt(ranking));
-    $('#infra-ranking')   .html(parseInt(infraRanking));
+    $('#infra-ranking')   .html(parseInt(infraRanking).toString() + '\u00BA');
     $('#infra-media')     .html(parseFloat(infraMedia).toFixed(1));
     $('#infra-pos')       .html(parseFloat(infraPos).toFixed(1));
-    $('#gfiscal-ranking') .html(parseInt(gfiscalRanking));
+    $('#gfiscal-ranking') .html(parseInt(gfiscalRanking).toString() + '\u00BA');
     $('#gfiscal-media')   .html(parseFloat(gfiscalMedia).toFixed(1));
     $('#gfiscal-pos')     .html(parseFloat(gfiscalPos).toFixed(1));
-    $('#pmercado-ranking').html(parseInt(pmercadoRanking));
+    $('#pmercado-ranking').html(parseInt(pmercadoRanking).toString() + '\u00BA');
     $('#pmercado-media')  .html(parseFloat(pmercadoMedia).toFixed(1));
     $('#pmercado-pos')    .html(parseFloat(pmercadoPos).toFixed(1));
-    $('#chumano-ranking') .html(parseInt(chumanoRanking));
+    $('#chumano-ranking') .html(parseInt(chumanoRanking).toString() + '\u00BA');
     $('#chumano-media')   .html(parseFloat(chumanoMedia).toFixed(1));
     $('#chumano-pos')     .html(parseFloat(chumanoPos).toFixed(1));
   // }
