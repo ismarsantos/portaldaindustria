@@ -119,9 +119,14 @@ function populeMunicipioData(idMunicipio) {
 
     if (municipio) {
       // $('img#mapa-json').attr("src","assets/img/mapa-cluster-" + municipio.key + ".png");
-      populateRulerValues(municipio);
+      populateMainRulerValues(municipio);
 
       var keys = Object.keys(municipio);
+      
+      $(keys).each(function (i, keyName) {
+        buildSubSliderRuler(keyName, municipio);
+      });
+
       $(keys).each(function (i, name) {
         var value = municipio[name];
         if (isNumeric(value)) {
@@ -140,6 +145,7 @@ function populeMunicipioData(idMunicipio) {
         }
       });
 
+
       $("span[id*='ran_']").each(function (i, e) {
         $(this).text(parseInt($(e).text()));
       });
@@ -147,33 +153,33 @@ function populeMunicipioData(idMunicipio) {
   });
 }
 
-function populateRulerValues(municipio) {
+function populateMainRulerValues(municipio) {
 
   var session = $('#menu-session').data('session');
 
   if (session === 'infraestrutura') {
-    setRuler(
+    setMainRuler(
       municipio.cmin_infra,
       municipio.cmed_infra,
       municipio.infra,
       municipio.cmax_infra
     )
   } else if (session === 'pontecial de mercado' ) {
-    setRuler(
+    setMainRuler(
       municipio.cmin_merc,
       municipio.cmed_merc,
       municipio.merc,
       municipio.cmax_merc
     )
   } else if (session === 'capital humano' ) {
-    setRuler(
+    setMainRuler(
       municipio.cmin_caph,
       municipio.cmed_caph,
       municipio.caph,
       municipio.cmax_caph
     )
   } else if (session === 'gestão fiscal' ) {
-    setRuler(
+    setMainRuler(
       municipio.cmin_gestfin,
       municipio.cmed_gestfin,
       municipio.gestfin,
@@ -182,8 +188,8 @@ function populateRulerValues(municipio) {
   }
 }
 
-function setRuler(menorVal, medVal, municVal, maiorVal) {
-  var slider = document.getElementById('slider');
+function setMainRuler(menorVal, medVal, municVal, maiorVal) {
+  var mainslider = document.getElementById('main-slider');
 
   $('#menor-val-cl').text(parseFloat(menorVal).toFixed(1));
   $('#media-val-cl').text(parseFloat(medVal).toFixed(1));
@@ -195,8 +201,8 @@ function setRuler(menorVal, medVal, municVal, maiorVal) {
   var municVal = parseFloat(municVal).toFixed(1);
   var maiorVal = parseFloat(maiorVal).toFixed(1);
 
-  console.log([menorVal, medVal, municVal, maiorVal])
-  slider.noUiSlider.set([menorVal, medVal, municVal, maiorVal])
+  console.log([menorVal, medVal, municVal, maiorVal]);
+  mainslider.noUiSlider.set([menorVal, medVal, municVal, maiorVal]);
 }
 
 function isNumeric(n) {
@@ -379,7 +385,127 @@ function populateTexts(data) {
   }
 }
 
+function buildSubSliderRuler(keyName, objMunic) {
+  var slider = document.getElementById('slider_' + keyName);
+
+  if (slider && !slider.classList.contains('noUi-target')) {
+
+    noUiSlider.create(slider, {
+      start: [3.5, 6.5],
+      behaviour: 'unconstrained-tap',
+      range: {
+        'min': [0.0],
+        'max': [10.0]
+      }
+    });
+  
+    slider.setAttribute('disabled', true);
+  
+    var media = document.createElement('span');
+    media.innerHTML = "Média do Cluster";
+  
+    var municipio = document.createElement('span');
+    municipio.innerHTML = "Vitória";
+    municipio.setAttribute('data-municipio', 'Vitória');
+  
+    media.classList.add('cc-legenda-cluster', 'cc-cor-cinza');
+    municipio.classList.add('cc-legenda-cluster', 'cc-cor-marrom', 'cc-municipio');
+
+    var selector = '#slider_' + keyName + ' .noUi-handle';
+  
+    $($(selector)[0]).parent().prepend(media);
+    $($(selector)[1]).parent().prepend(municipio);
+  
+    // TODO: remover indicadores fundo preto 
+    $(selector).each(function () {
+      this.style = 'background-color: black;';
+    });
+  
+    var mediaValor = document.createElement('span');
+    mediaValor.id = "med_" + keyName;
+  
+    var municipioValor = document.createElement('span');
+    municipioValor.id = keyName;
+  
+    mediaValor.classList.add('cc-valor', 'cc-color-cinza');
+    municipioValor.classList.add('cc-valor', 'cc-color-marrom', 'cc-valor-municipio');
+  
+    $($(selector)[0]).parent().append(mediaValor);
+    $($(selector)[1]).parent().append(municipioValor);    
+
+    var keyMedia = 'med_' + keyName;
+    slider.noUiSlider.set([objMunic[keyMedia], objMunic[keyName]]);
+  }
+}
+
+function buildMainSliderRuler() {
+  var slider = document.getElementById('main-slider');
+
+  noUiSlider.create(slider, {
+    start: [2.0, 4.0, 6.0, 8.0],
+    behaviour: 'unconstrained-tap',
+    range: {
+      'min': [0.0],
+      'max': [10.0]
+    }
+  });
+
+  slider.setAttribute('disabled', true);
+
+  var menor = document.createElement('span');
+  menor.innerHTML = "Menor do Cluster";
+
+  var media = document.createElement('span');
+  media.innerHTML = "Média do Cluster";
+
+  var municipio = document.createElement('span');
+  municipio.innerHTML = "Vitoria";
+  municipio.setAttribute('data-municipio', 'Vitoria');
+
+  var maior = document.createElement('span');
+  maior.innerHTML = "Maior do Cluster";
+
+  menor.classList.add('cc-legenda-cluster', 'cc-cor-roxo');
+  media.classList.add('cc-legenda-cluster', 'cc-cor-cinza');
+  municipio.classList.add('cc-legenda-cluster', 'cc-cor-marrom', 'cc-municipio');
+  maior.classList.add('cc-legenda-cluster', 'cc-cor-roxo');
+
+  var selector = '#main-slider .noUi-handle';
+
+  $($(selector)[0]).parent().prepend(menor);
+  $($(selector)[1]).parent().prepend(media);
+  $($(selector)[2]).parent().prepend(municipio);
+  $($(selector)[3]).parent().prepend(maior);
+
+  var menorValor = document.createElement('span');
+  menorValor.innerHTML = "0,0";
+  menorValor.id = "menor-val-cl";
+
+  var mediaValor = document.createElement('span');
+  mediaValor.innerHTML = "0,0";
+  mediaValor.id = "media-val-cl";
+
+  var municipioValor = document.createElement('span');
+  municipioValor.innerHTML = "0,0";
+  municipioValor.id = "munic-val-cl";
+
+  var maiorValor = document.createElement('span');
+  maiorValor.innerHTML = "0,0";
+  maiorValor.id = "maior-val-cl";
+
+  menorValor.classList.add('cc-valor', 'cc-color-roxo');
+  mediaValor.classList.add('cc-valor', 'cc-color-cinza');
+  municipioValor.classList.add('cc-valor', 'cc-color-marrom', 'cc-valor-municipio');
+  maiorValor.classList.add('cc-valor', 'cc-color-roxo');
+
+  $($(selector)[0]).parent().append(menorValor);
+  $($(selector)[1]).parent().append(mediaValor);
+  $($(selector)[2]).parent().append(municipioValor);
+  $($(selector)[3]).parent().append(maiorValor);
+}
+
 $(document).ready(function() {
+  buildMainSliderRuler();
   getMunicipiosJson(initMunicipioSelect);
   getMunicipiosJson(populateTexts);
 
