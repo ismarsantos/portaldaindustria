@@ -124,7 +124,8 @@ function populeMunicipioData(idMunicipio) {
       var keys = Object.keys(municipio);
       
       $(keys).each(function (i, keyName) {
-        buildSubSliderRuler(keyName, municipio);
+        buildSubSliderRuler(keyName);
+        setSubSliderRuler(keyName, municipio);
       });
 
       $(keys).each(function (i, name) {
@@ -201,7 +202,7 @@ function setMainRuler(menorVal, medVal, municVal, maiorVal) {
   var municVal = parseFloat(municVal).toFixed(1);
   var maiorVal = parseFloat(maiorVal).toFixed(1);
 
-  console.log([menorVal, medVal, municVal, maiorVal]);
+  // console.log([menorVal, medVal, municVal, maiorVal]);
   mainslider.noUiSlider.set([menorVal, medVal, municVal, maiorVal]);
 }
 
@@ -385,17 +386,17 @@ function populateTexts(data) {
   }
 }
 
-function buildSubSliderRuler(keyName, objMunic) {
+function buildSubSliderRuler(keyName) {
   var slider = document.getElementById('slider_' + keyName);
 
   if (slider && !slider.classList.contains('noUi-target')) {
 
     noUiSlider.create(slider, {
-      start: [3.5, 6.5],
+      start: [30.5, 60.5],
       behaviour: 'unconstrained-tap',
       range: {
         'min': [0.0],
-        'max': [10.0]
+        'max': [99.0]
       }
     });
   
@@ -431,11 +432,17 @@ function buildSubSliderRuler(keyName, objMunic) {
     municipioValor.classList.add('cc-valor', 'cc-color-marrom', 'cc-valor-municipio');
   
     $($(selector)[0]).parent().append(mediaValor);
-    $($(selector)[1]).parent().append(municipioValor);    
+    $($(selector)[1]).parent().append(municipioValor);
+  }
+}
 
+function setSubSliderRuler(keyName, objMunic) {
+  var slider = document.getElementById('slider_' + keyName);
+  if (slider) {
     var keyMedia = 'med_' + keyName;
     slider.noUiSlider.set([objMunic[keyMedia], objMunic[keyName]]);
   }
+  
 }
 
 function buildMainSliderRuler() {
