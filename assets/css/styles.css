@@ -706,6 +706,7 @@
 .cc-como-funciona .cc-figure {
   padding-top: 60px;
   float: left;
+  max-width: 200px;
 }
 
 @media (min-width: 576px) {
@@ -930,6 +931,7 @@
   background-color: #ababab;
   margin-bottom: 20px;
   border-radius: 5px;
+  padding: 20px;
 }
 
 @media (min-width: 992px) {
@@ -2802,11 +2804,6 @@
   background-color: #d6d6d6;
 }
 
-.cc-rodape .cc-link-contato .cc-icone {
-  /*display: inline-block;*/
-  /*margin-right: 15px;*/
-}
-
 .cc-rodape .cc-link-contato i {
   font-size: 30px;
 }
@@ -4416,8 +4413,247 @@ sidebar {
   }
 }
 
-#main-slider .cc-valor-municipio{
-  top: -44px !important;
+#main-slider span.cc-valor.cc-valor-municipio{
+  top: -45px;
+  left: 27px;
+}
+
+@media (min-width: 576px){
+  #main-slider span.cc-valor.cc-valor-municipio{
+    top: -40px;
+    left: 38px;
+  }
+}
+
+@media (min-width: 768px){
+  #main-slider span.cc-valor.cc-valor-municipio{
+    top: -40px;
+    left: 55px;
+  }
+}
+
+@media (min-width: 992px){
+  #main-slider span.cc-valor.cc-valor-municipio{
+    top: -40px;
+    left: 90px;
+  }
+}
+
+@media (min-width: 1200px){
+  #main-slider span.cc-valor.cc-valor-municipio{
+    top: -40px;
+    left: 70px;
+  }
+}
+
+/* #slider .cc-valor-municipio{
+   top: -44px !important;
+} */
+
+.cc-manual-uso{
+  position: relative;
+  right: 0;
+  top: 35px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 768px){
+  .cc-manual-uso{
+    position: absolute;
+    right: 0;
+    top: 35px;
+    margin-bottom: 0;
+  }
+}
+
+.cc-manual-uso img{
+  display: inline-block;
+  margin-top: -25px;
+}
+
+.cc-manual-uso .cc-box-link{
+  display: inline-block;
+}
+
+.cc-manual-uso span{
+  font-size: 10px;
+  font-family: "OpenSans";
+  color: rgb(116, 116, 116);
+  line-height: 1.2;
+  text-align: left;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .cc-manual-uso span{
+    font-size: 13px;
+    font-family: "OpenSans";
+    color: rgb(116, 116, 116);
+    line-height: 1.2;
+    text-align: left;
+    display: block;
+  }
+}
+
+.cc-manual-uso a{
+  font-size: 12px;
+  font-family: "Roboto";
+  color: rgb(39, 85, 162);
+  text-transform: uppercase;
+  line-height: 1.701;
+  text-align: left;
+  display: block;
+}
+
+@media (min-width: 992px) {
+  .cc-manual-uso a{
+    font-size: 17.637px;
+    font-family: "Roboto";
+    color: rgb(39, 85, 162);
+    text-transform: uppercase;
+    line-height: 1.701;
+    text-align: left;
+    display: block;
+  }
+}
+
+.cc-relativo{
+  position: relative;
+}
+
+.cc-custom-carousel-1{
+  position: relative;
+}
+
+.cc-custom-carousel-1 .cc-slide{
+  height: 340px;
+  position: relative;
+  margin: 0 10px;
+}
+
+.cc-custom-carousel-1 .cc-box-imagem{
+  border: 10px solid #fff;
+  border-radius: 10px;
+  height: 260px;
+}
+
+.cc-custom-carousel-1 .cc-box-imagem img{
+  height: 100%;
+}
+
+.cc-custom-carousel-1 .cc-box-descricao .cc-content{
+  background-color: #2955a3;
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 22px;
+  padding: 15px;
+  border-radius: 0 0 5px 5px;
+}
+
+.cc-custom-carousel-1 .cc-box-descricao .cc-header{
+  background-color: #1d4486;
+  color: #8d96a3;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 22px;
+  padding: 3px 15px;
+  border-radius: 5px 5px 0 0;
+}
+
+.cc-custom-carousel-1 .cc-box-descricao .cc-header .cc-nome{
+  float: none;
+  text-align: center;
+}
+
+.cc-custom-carousel-1 .cc-box-descricao .cc-content .cc-titulo{
+  color: #fff;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 22px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.cc-custom-carousel-1 .cc-box-descricao .cc-content p{
+  font-size: 12px;
+  font-family: "Roboto";
+  color: rgb(255, 255, 255);
+  line-height: 1.429;
+  text-align: justify;
+  font-weight: 300;
+}
+
+.cc-custom-carousel-1 .slick-dots{
+  position: relative;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.cc-custom-carousel-1 .slick-dots li{
+  width: 20px;
+  height: 20px;
+  z-index: 999;
+}
+
+.cc-custom-carousel-1 .cc-box-descricao .cc-box-btn-drop{
+  text-align: center;
+}
+
+.cc-custom-carousel-1 .cc-box-descricao .cc-box-btn-drop .cc-btn-cluster{
+  margin-top: -30px;
+  background-color: #d9d9d9;
+  border-radius: 50%;
+  color: #2755a2;
+  border: none;
+}
+
+.cc-alerta{
+  position: relative;
+  padding-right: 26px;
+}
+
+.cc-alerta:before{
+  content: "";
+  width: 26px;
+  height: 21px;
+  display: block;
+  background-image: url(../img/icon-alerta.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  right: 0;
+}
+
+.cc-espaco-reservado .cc-circulo{
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: auto;
+  margin-bottom: 15px;
+}
+
+.cc-espaco-reservado .cc-texto-maior, .cc-espaco-reservado .cc-texto-menor, .cc-espaco-reservado .cc-valor{
+  display: block;
+  font-family: Roboto, sans-serif;
+  color: rgb(243, 243, 243);
+  text-transform: uppercase;
+  line-height: 1.2;
+  text-align: center;
+  font-size: 14px;
+}
+
+.cc-espaco-reservado .cc-texto-menor{
+  font-size: 10px;
+}
+
+.cc-espaco-reservado .cc-valor{
+  font-size: 20px;
+  font-weight: 900;
 }
 
 #membros-cluster .list-group-item:hover {
