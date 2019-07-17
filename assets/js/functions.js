@@ -443,9 +443,9 @@ function buildCategoriesSliderRuler(keyName) {
     $($(selector)[1]).parent().prepend(municipio);
   
     // TODO: remover indicadores fundo preto 
-    $(selector).each(function () {
-      this.style = 'background-color: black;';
-    });
+    // $(selector).each(function () {
+    //   this.style = 'background-color: black;';
+    // });
   
     var mediaValor = document.createElement('span');
     mediaValor.id = "med_" + keyName;
@@ -572,9 +572,9 @@ function buildMediaSliderRulers() {
     $($(selector)[1]).parent().prepend(municipio);
   
     // TODO: remover indicadores fundo preto 
-    $(selector).each(function () {
-      this.style = 'background-color: black;';
-    });
+    // $(selector).each(function () {
+    //   this.style = 'background-color: black;';
+    // });
     
     var mediaValor = document.createElement('span');
     var municipioValor = document.createElement('span');

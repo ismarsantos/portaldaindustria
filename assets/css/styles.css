@@ -346,11 +346,14 @@
   display: inline-block;
   text-align: center;
   margin: 20px 10px;
-  padding: 3px 2px;
+  padding: 3px 10px;
   color: #fff;
-  font-size: 8px;
+  font-size: 13px;
   font-family: Roboto, sans-serif;
-  text-transform: uppercase;
+  top: -65px;
+  white-space: nowrap;
+  min-width: 137.7px;
+  left: -45px;
 }
 
 @media (min-width: 576px) {
@@ -691,12 +694,17 @@
 .cc-regua .cc-box-valores .cc-valor {
   position: absolute;
   bottom: -41px;
-  left: 43%;
+  left: 29px;
   background: transparent;
 }
 
 .cc-regua .cc-box-valores {
   position: relative;
+  height: 120px;
+}
+
+.cc-regua .cc-box-valores .noUi-target {
+  top: 50%;
 }
 
 .cc-como-funciona {
@@ -4658,4 +4666,66 @@ sidebar {
 
 #membros-cluster .list-group-item:hover {
   background-color: #f3f3f3;
+}
+
+.cc-box-acordion-eixo .cc-regua-pequena{
+  height: 120px;
+}
+
+.cc-box-acordion-eixo .cc-regua-pequena .cc-box-valores{
+  position: relative;
+  top: 50%;
+}
+
+.cc-box-acordion-eixo .cc-regua-pequena .cc-box-valores .cc-legenda-cluster{
+  border-radius: 4px;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 20px 10px;
+  padding: 3px 10px;
+  color: #fff;
+  font-size: 13px;
+  font-family: Roboto, sans-serif;
+  top: -72px;
+  white-space: nowrap;
+  min-width: 137.7px;
+  left: -45px;
+}
+
+.cc-box-acordion-eixo .cc-regua-pequena .cc-box-valores .cc-legenda-cluster:before{
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #a1a1a1;
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 44%;
+}
+
+.cc-box-acordion-eixo .cc-regua-pequena .cc-box-valores .cc-legenda-cluster.cc-cor-marrom:before{
+  border-top: 8px solid #c9a471;
+}
+
+.cc-box-acordion-eixo .cc-regua-pequena .cc-box-valores .cc-legenda-cluster:after{
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #a1a1a1;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -36px;
+  left: 43%;
+  }
+
+.cc-box-acordion-eixo .cc-regua-pequena .cc-box-valores .cc-legenda-cluster.cc-cor-marrom:after{
+  background-color: #c9a471;
+}
+
+.cc-box-acordion-eixo .cc-regua-pequena .cc-box-valores .cc-valor{
+  position: relative;
+  top: -40px;
+  left: 16px;
+  margin: auto;
 }
