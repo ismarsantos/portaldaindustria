@@ -154,6 +154,7 @@ function populeMunicipioData(idMunicipio) {
   });
 }
 
+// Verifica a sessão atual do menu e pupula a regua pincipal.
 function populateMainRulerValues(municipio) {
 
   var session = $('#menu-session').data('session');
@@ -189,6 +190,7 @@ function populateMainRulerValues(municipio) {
   }
 }
 
+// inicializa os valores da Regua principal
 function setMainRuler(menorVal, medVal, municVal, maiorVal) {
   var mainslider = document.getElementById('main-slider');
 
@@ -213,6 +215,7 @@ function setMainRuler(menorVal, medVal, municVal, maiorVal) {
   mainslider.noUiSlider.set([vf_min, vf_med, vf_mun, vf_max]);
 }
 
+// valida valores numericos
 function isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
@@ -427,8 +430,8 @@ function buildCategoriesSliderRuler(keyName) {
       start: [0.0, 0.0],
       behaviour: 'unconstrained-tap',
       range: {
-        'min': [0],
-        'max': [100.0]
+        'min': [0.0],
+        'max': [10.0]
       }
     });
 
@@ -471,15 +474,16 @@ function buildCategoriesSliderRuler(keyName) {
 function setCategoriesSliderRuler(keyName, objMunic) {
   var slider = document.getElementById('slider_' + keyName);
   if (slider) {
-    var keyMedia = 'med_' + keyName;
+    var keyMedia = 'prm_' + keyName;
+    var pr_keyName = 'pr_' + keyName; 
 
     var medVal = objMunic[keyMedia];
-    var municVal = objMunic[keyName];
+    var municVal = objMunic[pr_keyName];
 
-    var vf_med = parseFloat(medVal).toFixed(1);
-    var vf_mun = parseFloat(municVal).toFixed(1);
-
-    slider.noUiSlider.set([vf_med, vf_mun]);
+    medVal = parseFloat(medVal).toFixed(1);
+    municVal = parseFloat(municVal).toFixed(1);
+    
+    slider.noUiSlider.set([medVal, municVal]);
   }
 }
 
