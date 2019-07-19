@@ -1,9 +1,5 @@
 $(document).ready(function() {
-  var sidebar = document.getElementById('sidebar');
-  var stickySidebar = new StickySidebar(sidebar, {
-    topSpacing: 0,
-    bottomSpacing: 0
-  });
+  var stickySidebar = document.getElementById('sidebar');
 
   $('a[data-toggle="pill"]').on('click', function (e) {
     $('.cc-box-card.active').removeClass("active");
@@ -83,7 +79,6 @@ $(document).ready(function() {
       }]
   });
 
-
   $(document).on('click', '.cc-btn-cluster', function(event) {
     var classe = $(this).find(".fa").attr("class");
     if(classe == "fa fa-plus"){
@@ -143,96 +138,4 @@ $(document).ready(function() {
       $(this).find(".fa").addClass(classe);
   });
 
-
-  // $(window).scroll(function() {
-  //     var scroll = $(window).scrollTop();
-  //      console.log(scroll);
-  //     if (scroll > 1664) {
-  //         if (scroll <= 3564) {
-  //         $(".cc-box-card-menu").addClass("cc-fixo");
-  //         // $("#imgbg-final").css("z-index", "1");
-  //             console.log("passou aqui");
-  //         } else {
-  //             $(".cc-box-card-menu").removeClass("cc-fixo");
-  //         }
-  //     }else{
-  //         $(".cc-box-card-menu").removeClass("cc-fixo");
-  //     }
-  // });
-
-  //Switch do formulario Novdades...
-  // $("#switch-shadow").click(function(){
-  //     var classe = $(this).attr("class");
-  //     if($(this).prop("checked")){
-  //         $(this).addClass(".cc-escolhido");
-  //         console.log("checado");
-  //     }else{
-  //         $(this).removeClass(".cc-escolhido");
-  //         console.log("nãoc hecado");
-  //     }
-  // });
-
-//   var slider = document.getElementById('slider');
-
-//   noUiSlider.create(slider, {
-//       start: [200, 400, 600, 800],
-//       behaviour: 'unconstrained-tap',
-//       range: {
-//         'min': [0],
-//         'max': [1000]
-//       }
-//   });
-
-//   slider.setAttribute('disabled', true);
-//   var menor = document.createElement('span');
-//   menor.innerHTML = "Menor do Cluster";
-//   menor.setAttribute('data-', '');
-
-//   var media = document.createElement('span');
-//   media.innerHTML = "Média do Cluster";
-//   media.setAttribute('data-', '');
-
-//   var municipio = document.createElement('span');
-//   municipio.innerHTML = "Vitoria";
-//   municipio.setAttribute('data-municipio', 'Vitoria');
-
-//   var maior = document.createElement('span');
-//   maior.innerHTML = "Maior do Cluster";
-//   maior.setAttribute('data-', '');
-
-//   menor.classList.add('cc-legenda-cluster', 'cc-cor-roxo');
-//   media.classList.add('cc-legenda-cluster', 'cc-cor-cinza');
-//   municipio.classList.add('cc-legenda-cluster', 'cc-cor-marrom', 'cc-municipio');
-//   maior.classList.add('cc-legenda-cluster', 'cc-cor-roxo');
-
-//   $($('.noUi-handle')[0]).parent().prepend(menor);
-//   $($('.noUi-handle')[1]).parent().prepend(media);
-//   $($('.noUi-handle')[2]).parent().prepend(municipio);
-//   $($('.noUi-handle')[3]).parent().prepend(maior);
-
-//   var menorValor = document.createElement('span');
-//   menorValor.innerHTML = "0,0";
-//   menorValor.id = "menor-val-cl";
-
-//   var mediaValor = document.createElement('span');
-//   mediaValor.innerHTML = "0,0";
-//   mediaValor.id = "media-val-cl";
-
-//   var municipioValor = document.createElement('span');
-//   municipioValor.innerHTML = "0,0";
-//   municipioValor.id = "munic-val-cl";
-
-//   var maiorValor = document.createElement('span');
-//   maiorValor.innerHTML = "0,0";
-//   maiorValor.id = "maior-val-cl";
-
-//   menorValor.classList.add('cc-valor', 'cc-color-roxo');
-//   mediaValor.classList.add('cc-valor', 'cc-color-cinza');
-//   municipioValor.classList.add('cc-valor', 'cc-color-marrom', 'cc-valor-municipio');
-//   maiorValor.classList.add('cc-valor', 'cc-color-roxo');
-
-//   $($('.noUi-handle')[0]).parent().append(menorValor);
-//   $($('.noUi-handle')[1]).parent().append(mediaValor);
-//   $($('.noUi-handle')[2]).parent().append(municipioValor);
-//   $($('.noUi-handle')[3]).parent().append(maiorValor);
 });

@@ -50,7 +50,6 @@ function initClusterMap(idMunicipio) {
 }
 
 function initFilterMap(idMunicipio) {
-// console.log();input.parent().parent().attr('id')
   var buildMunicSelector = function (id) {
     return "#filter-map g[data-municipio='" + id + "']";
   }
@@ -216,7 +215,7 @@ function setMainRuler(menorVal, medVal, municVal, maiorVal) {
   vf_med = parseFloat(vf_med).toFixed(1);
   vf_mun = parseFloat(vf_mun).toFixed(1);
 
-  console.log([vf_min, vf_med, vf_mun, vf_max]);
+  // console.log([vf_min, vf_med, vf_mun, vf_max]);
   mainslider.noUiSlider.set([vf_min, vf_med, vf_mun, vf_max]);
 }
 
