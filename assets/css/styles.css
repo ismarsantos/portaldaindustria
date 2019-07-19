@@ -307,16 +307,7 @@
   background: #fff;
   border-radius: 4px;
   height: 175px;
-  padding: 0;
-}
-
-@media (min-width: 576px) {
-  .cc-regua-grande {
-    background: #fff;
-    border-radius: 4px;
-    height: 175px;
-    padding: 0px 30px;
-  }
+  padding: 0px 30px;
 }
 
 .cc-regua {
@@ -710,7 +701,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 7px;
+  left: 0px;
 }
 
 @media (min-width: 576px) {
@@ -4705,7 +4696,7 @@ sidebar {
 #main-slider span.cc-valor {
   position: relative;
   top: -40px;
-  left: 31px;
+  left: 22px;
   margin: auto;
 }
 
@@ -5449,8 +5440,4 @@ sidebar {
   position: absolute;
   bottom: -8px;
   left: 44%;
-}
-
-html:not([dir="rtl"]) .noUi-horizontal .noUi-handle{
-  background: #000;
 }
