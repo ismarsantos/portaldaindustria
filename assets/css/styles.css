@@ -4015,12 +4015,6 @@
   margin-right: 5px;
 }
 
-@media (min-width: 576px) {
-  .cc-segundo-menu .cc-custom-link .cc-imagem-texto img {
-    width: initial;
-  }
-}
-
 .cc-fixo .cc-box-card-menu .cc-box-card {
   margin-bottom: 20px;
 }
