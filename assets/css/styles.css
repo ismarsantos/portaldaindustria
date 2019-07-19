@@ -36,13 +36,13 @@
   border-bottom-left-radius: 8px 8px;
   border-bottom-right-radius: 8px 8px;
   cursor: pointer;
-  width: 85%;
+  width: 81%;
   margin-left: 30px;
   position: relative;
   margin-bottom: 25px;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 1200px) {
   .cc-box-card-menu .cc-box-card {
     background: #fff;
     border-radius: 4px;
@@ -2864,14 +2864,18 @@
 
 .cc-div-categorias .cc-eixo .cc-content .cc-conteudo .cc-box-acordion-eixo .cc-acordion-conteudo .cc-header i {
   float: right;
-  border-radius: 50%;
-  background-color: #d9d9d9;
-  border: none;
-  color: rgb(39, 85, 162);
-  font-size: 13px;
-  padding: 8px;
-  display: block;
-  margin: auto;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    border: none;
+    color: rgb(39, 85, 162);
+    font-size: 13px;
+    padding: 8px;
+    margin: auto;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .cc-div-categorias .cc-eixo .cc-content .cc-conteudo .cc-box-acordion-eixo .cc-acordion-conteudo {
@@ -5088,7 +5092,8 @@ sidebar {
 
 .cc-box-acordion-eixo .cc-regua-pequena{
   height: 175px;
-  padding: 0 55px;
+  padding: 0 60px;
+  position: relative;
 }
 
 .cc-box-acordion-eixo .cc-regua-pequena .cc-box-valores{
@@ -5440,4 +5445,21 @@ sidebar {
   position: absolute;
   bottom: -8px;
   left: 44%;
+}
+
+.cc-box-acordion-eixo .cc-regua-pequena:before {
+  content: "";
+  display: block;
+  width: 92%;
+  height: 5px;
+  background-color: #dddddd;
+  position: absolute;
+  top: 50%;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  margin-left: 15px;
+  margin-right: 15px;
+  z-index: 1;
+  border-radius: 5px;
 }
