@@ -467,7 +467,7 @@ function buildCategoriesSliderRuler(keyName) {
     municipioValor.id = keyName;
 
     mediaValor.classList.add('cc-valor', 'cc-color-cinza');
-    municipioValor.classList.add('cc-valor', 'cc-color-marrom', 'cc-valor-municipio');
+    municipioValor.classList.add('cc-color-marrom', 'cc-valor-municipio');
 
     $($(selector)[0]).parent().append(mediaValor);
     $($(selector)[1]).parent().append(municipioValor);
