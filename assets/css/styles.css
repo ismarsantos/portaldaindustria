@@ -306,7 +306,7 @@
 .cc-regua-grande {
   background: #fff;
   border-radius: 4px;
-  height: 120px;
+  height: 175px;
   padding: 0;
 }
 
@@ -314,7 +314,7 @@
   .cc-regua-grande {
     background: #fff;
     border-radius: 4px;
-    height: 120px;
+    height: 175px;
     padding: 0px 30px;
   }
 }
@@ -457,35 +457,39 @@
   padding: 9px 10px;
 }
 
-
-
 #main-slider .cc-legenda-cluster {
   border-radius: 4px;
   position: relative;
-  display: inline-block;
   text-align: center;
-  margin: 20px 10px;
-  padding: 3px 2px;
+  padding: 3px;
   color: #fff;
-  font-size: 8px;
+  font-size: 13px;
   font-family: Roboto, sans-serif;
-  text-transform: uppercase;
-  top: -80px;
+  top: 37px;
+  width: 90px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 7px;
 }
 
 @media (min-width: 576px) {
   #main-slider .cc-legenda-cluster {
     border-radius: 4px;
     position: relative;
-    display: inline-block;
     text-align: center;
-    margin: 20px 10px;
-    padding: 3px 2px;
+    padding: 3px;
     color: #fff;
-    font-size: 8px;
+    font-size: 13px;
     font-family: Roboto, sans-serif;
-    top: -64px;
-    white-space: nowrap;
+    top: 37px;
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
   }
 }
 
@@ -493,13 +497,18 @@
   #main-slider .cc-legenda-cluster {
     border-radius: 4px;
     position: relative;
-    display: inline-block;
     text-align: center;
-    margin: 20px 10px;
-    padding: 3px 10px;
+    padding: 3px;
     color: #fff;
-    font-size: 10px;
+    font-size: 13px;
     font-family: Roboto, sans-serif;
+    top: 37px;
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 18px;
   }
 }
 
@@ -507,38 +516,59 @@
   #main-slider .cc-legenda-cluster {
     border-radius: 4px;
     position: relative;
-    display: inline-block;
     text-align: center;
-    margin: 20px 10px;
-    padding: 3px 10px;
+    padding: 3px;
     color: #fff;
     font-size: 13px;
     font-family: Roboto, sans-serif;
-    top: -72px;
-    white-space: nowrap;
-    min-width: 137.7px;
+    top: 37px;
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 19px;
+  }
+}
+
+@media (min-width: 1200px) {
+  #main-slider .cc-legenda-cluster {
+    border-radius: 4px;
+    position: relative;
+    text-align: center;
+    padding: 3px;
+    color: #fff;
+    font-size: 13px;
+    font-family: Roboto, sans-serif;
+    top: 36px;
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 36px;
   }
 }
 
 #main-slider .cc-legenda-cluster:before {
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 8px solid #8E8FBD;
+  border-bottom: 8px solid #8E8FBD;
   content: "";
   position: absolute;
-  bottom: -8px;
-  left: 50%;
+  bottom: 45px;
+  left: 28px;
 }
 
 @media (min-width: 576px){
   #main-slider .cc-legenda-cluster:before {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 8px solid #8E8FBD;
+    border-bottom: 8px solid #8E8FBD;
     content: "";
     position: absolute;
-    bottom: -8px;
-    left: 38%;
+    bottom: 45px;
+    left: 44px;
   }
 }
 
@@ -546,23 +576,23 @@
   #main-slider .cc-legenda-cluster:before {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 8px solid #8E8FBD;
+    border-bottom: 8px solid #8E8FBD;
     content: "";
     position: absolute;
-    bottom: -8px;
-    left: 42%;
+    bottom: 45px;
+    left: 44px;
   }
 }
 
-@media (min-width: 991px){
+@media (min-width: 992px){
   #main-slider .cc-legenda-cluster:before {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 8px solid #8E8FBD;
+    border-bottom: 8px solid #8E8FBD;
     content: "";
     position: absolute;
-    bottom: -8px;
-    left: 39%;
+    bottom: 45px;
+    left: 44px;
   }
 }
 
@@ -570,11 +600,11 @@
   #main-slider .cc-legenda-cluster:before {
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 8px solid #8E8FBD;
+    border-bottom: 8px solid #8E8FBD;
     content: "";
     position: absolute;
-    bottom: -8px;
-    left: 44%;
+    bottom: 45px;
+    left: 41px;
   }
 }
 
@@ -586,8 +616,8 @@
   background-color: #8E8FBD;
   border-radius: 50%;
   position: absolute;
-  bottom: -26px;
-  left: 48%;
+  bottom: 73px;
+  left: 27px;
 }
 
 @media (min-width: 576px) {
@@ -599,8 +629,8 @@
     background-color: #8E8FBD;
     border-radius: 50%;
     position: absolute;
-    bottom: -36px;
-    left: 38%;
+    bottom: 73px;
+    left: 44px;
   }
 }
 
@@ -613,12 +643,12 @@
     background-color: #8E8FBD;
     border-radius: 50%;
     position: absolute;
-    bottom: -36px;
-    left: 42%;
+    bottom: 73px;
+    left: 42px;
   }
 }
 
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   #main-slider .cc-legenda-cluster:after {
     content: "";
     display: block;
@@ -627,8 +657,8 @@
     background-color: #8E8FBD;
     border-radius: 50%;
     position: absolute;
-    bottom: -36px;
-    left: 41%;
+    bottom: 73px;
+    left: 41px;
   }
 }
 
@@ -641,8 +671,8 @@
     background-color: #8E8FBD;
     border-radius: 50%;
     position: absolute;
-    bottom: -36px;
-    left: 43%;
+    bottom: 73px;
+    left: 38px;
   }
 }
 
@@ -667,6 +697,7 @@
 
 #main-slider .cc-legenda-cluster.cc-cor-marrom:before {
   border-top: 8px solid #c9a471;
+  border-bottom: none;
 }
 
 #main-slider .cc-legenda-cluster.cc-cor-cinza:after {
@@ -674,7 +705,7 @@
 }
 
 #main-slider .cc-legenda-cluster.cc-cor-cinza:before {
-  border-top: 8px solid #a1a1a1;
+  border-bottom: 8px solid #a1a1a1;
 }
 
 .cc-regua .cc-box-valores:nth-child(1) {
@@ -4342,15 +4373,15 @@ sidebar {
 
 #main-slider span.cc-valor {
   position: relative;
-  top: -68px;
-  left: 30px;
+  top: -40px;
+  left: 31px;
   margin: auto;
 }
 
 @media (min-width: 576px){
   #main-slider span.cc-valor {
     position: relative;
-    top: -40px;
+    top: -37px;
     left: 40px;
     margin: auto;
   }
@@ -4359,17 +4390,17 @@ sidebar {
 @media (min-width: 768px){
   #main-slider span.cc-valor {
     position: relative;
-    top: -40px;
-    left: 58px;
+    top: -39px;
+    left: 56px;
     margin: auto;
   }
 }
 
-@media (min-width: 991px){
+@media (min-width: 992px){
   #main-slider span.cc-valor {
     position: relative;
-    top: -40px;
-    left: 58px;
+    top: -39px;
+    left: 56px;
     margin: auto;
   }
 }
@@ -4377,74 +4408,145 @@ sidebar {
 @media (min-width: 1200px){
   #main-slider span.cc-valor {
     position: relative;
-    top: -40px;
-    left: 72px;
+    top: -38px;
+    left: 71px;
     margin: auto;
   }
 }
 
 #main-slider .cc-municipio{
-  top: -55px;
+  border-radius: 4px;
+  position: relative;
+  text-align: center;
+  padding: 3px;
+  color: #fff;
+  font-size: 13px;
+  font-family: Roboto, sans-serif;
+  top: -81px;
+  width: 90px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: -11px;
 }
 
 @media (min-width: 576px){
   #main-slider .cc-municipio{
-    top: -64px;
-    left: 15px;
+    border-radius: 4px;
+    position: relative;
+    text-align: center;
+    padding: 3px;
+    color: #fff;
+    font-size: 13px;
+    font-family: Roboto, sans-serif;
+    top: -81px;
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
   }
 }
 
 @media (min-width: 768px){
   #main-slider .cc-municipio{
-    top: -68px;
-    left: 21px;
+    border-radius: 4px;
+    position: relative;
+    text-align: center;
+    padding: 3px;
+    color: #fff;
+    font-size: 13px;
+    font-family: Roboto, sans-serif;
+    top: -81px;
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 18px;
   }
 }
 
-@media (min-width: 991px){
+@media (min-width: 992px){
   #main-slider .cc-municipio{
-    top: -68px;
-    left: 24px;
+    border-radius: 4px;
+    position: relative;
+    text-align: center;
+    padding: 3px;
+    color: #fff;
+    font-size: 13px;
+    font-family: Roboto, sans-serif;
+    top: -81px;
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 18px;
   }
 }
 
 @media (min-width: 1200px){
   #main-slider .cc-municipio{
-    top: -72px;
-    left: initial;
+    border-radius: 4px;
+    position: relative;
+    text-align: center;
+    padding: 3px;
+    color: #fff;
+    font-size: 13px;
+    font-family: Roboto, sans-serif;
+    top: -81px;
+    width: 100px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 31px;
   }
 }
 
 #main-slider span.cc-valor.cc-valor-municipio{
-  top: -45px;
-  left: 27px;
+  position: relative;
+  top: -76px;
+  left: 27px;  
+  margin: auto;
 }
 
 @media (min-width: 576px){
   #main-slider span.cc-valor.cc-valor-municipio{
-    top: -40px;
+    position: relative;
+    top: -76px;
     left: 38px;
+    margin: auto;
   }
 }
 
 @media (min-width: 768px){
   #main-slider span.cc-valor.cc-valor-municipio{
-    top: -40px;
-    left: 55px;
+    position: relative;
+    top: -76px;
+    left: 57px;
+    margin: auto;
   }
 }
 
 @media (min-width: 992px){
   #main-slider span.cc-valor.cc-valor-municipio{
-    top: -40px;
-    left: 90px;
+    position: relative;
+    top: -76px;
+    left: 57px;
+    margin: auto;
   }
 }
 
 @media (min-width: 1200px){
   #main-slider span.cc-valor.cc-valor-municipio{
-    top: -40px;
-    left: 70px;
+    position: relative;
+    top: -76px;
+    left: 71px;
+    margin: auto;
   }
 }
 
@@ -4722,4 +4824,30 @@ sidebar {
   top: -40px;
   left: 16px;
   margin: auto;
+}
+
+#main-slider .cc-legenda-cluster.cc-municipio:after{
+  content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #c9a471;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -45px;
+  left: 43%;
+}
+
+#main-slider .cc-legenda-cluster.cc-municipio:before{
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid #c9a471;
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 44%;
+}
+
+html:not([dir="rtl"]) .noUi-horizontal .noUi-handle{
+  background: #000;
 }
