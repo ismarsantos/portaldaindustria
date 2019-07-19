@@ -15,13 +15,13 @@ function initMunicipioSelect(data) {
   });
 }
 
-function initClusterMap(input) {
+function initClusterMap(idMunicipio) {
 
-  var munic_current = $(input).data("municipio");
+  var munic_current = idMunicipio
   if (!munic_current) return;
 
-  selectMunicipioOption(munic_current);
-  populeMunicipioData(munic_current);
+  // selectMunicipioOption(munic_current);
+  // populeMunicipioData(munic_current);
 
   var buildMunicSelector = function (id) {
     return "#cluster-map g[data-municipio='" + id + "']";
@@ -49,17 +49,17 @@ function initClusterMap(input) {
   });
 }
 
-function initFilterMap(input) {
+function initFilterMap(idMunicipio) {
 // console.log();input.parent().parent().attr('id')
   var buildMunicSelector = function (id) {
     return "#filter-map g[data-municipio='" + id + "']";
   }
 
   var selectedValueRadio = $("input[name='options']:checked").val();
-  var munic_current = $(input).data("municipio");
+  var munic_current = idMunicipio;
 
-  selectMunicipioOption(munic_current);
-  populeMunicipioData(munic_current);
+  // selectMunicipioOption(munic_current);
+  // populeMunicipioData(munic_current);
   getMunicipiosJson(function (data) {
     for (var i in data){
       $(buildMunicSelector(data[i].key)).css("fill", "#e7e8ea");
@@ -125,7 +125,12 @@ function populeMunicipioData(idMunicipio) {
 
       $(keys).each(function (i, keyName) {
         buildCategoriesSliderRuler(keyName);
-        setCategoriesSliderRuler(keyName, municipio);
+        var keyTerms = keyName.toString().split('_');
+        if (keyTerms[0] === 'pr') {
+          keyTerms.shift();
+          keyTerms = keyTerms.join('_');  
+          setCategoriesSliderRuler(keyTerms, municipio);
+        }
       });
 
       $(keys).each(function (i, name) {
@@ -230,11 +235,11 @@ function setFilterMapSelected(idMunicipio) {
   $(filter).click();
 }
 
-function clickFilterMap(input) {
-  if (input) {
+function clickFilterMap(idMunicipio) {
+  if (idMunicipio) {
     getMunicipiosJson(function(data) {
       var municipio = data.find(obj => {
-        return obj.key === input.data('municipio');
+        return obj.key === idMunicipio;
       });
 
       var selectedValueRadio = $("input[name='options']:checked").val();
@@ -354,9 +359,7 @@ function setMediaSliderRulers(infra_media, infra_pos, pmercado_media, pmercado_p
   slider_gfiscal_media.noUiSlider.set([gfiscal_media, gfiscal_pos]);
 }
 
-function buildMembrosCluster(input) {
-  var idMunicipio = $(input).val() || $(input).data('municipio');
-
+function buildMembrosCluster(idMunicipio) {
   if (idMunicipio) {
     getMunicipiosJson(function(data) {
       var selected = data.find(munic => {
@@ -621,50 +624,52 @@ function buildMediaSliderRulers() {
 }
 
 $(document).ready(function() {
+  var inputSelectMunicipio = $(".cc-select-municipio");
   buildMainSliderRuler();
   buildMediaSliderRulers();
   getMunicipiosJson(initMunicipioSelect);
   getMunicipiosJson(populateTexts);
 
-  $(".cc-select-municipio").on('change', function () {
+  inputSelectMunicipio.on('change', function () {
     var that = $(this)
-    $(".cc-select-municipio").each(function (i, input) {
+    inputSelectMunicipio.each(function (i, input) {
       $(input).val(that.val());
     });
-    populeMunicipioData(that.val());
     setClusterMapSelected(that.val());
     setFilterMapSelected(that.val());
-    buildMembrosCluster(that);
+    buildMembrosCluster(that.val());
+    selectMunicipioOption(that.val());
+    populeMunicipioData(that.val());
   });
 
   $("g[data-municipio]").on('click', function(event) {
     event.preventDefault();
     event.stopPropagation();
-    var input = $(this);
-    initClusterMap(input);
-    initFilterMap(input);
-    clickFilterMap(input);
-    buildMembrosCluster(input);
-
+    var munic_current = $(this).data("municipio");
+    initClusterMap(munic_current);
+    initFilterMap(munic_current);
+    clickFilterMap(munic_current);
+    buildMembrosCluster(munic_current);
+    selectMunicipioOption(munic_current);
+    populeMunicipioData(munic_current);
   });
 
   $(".cc-custom-radio").on('click', function () {
-    setFilterMapSelected($(".cc-select-municipio").val())
+    setFilterMapSelected(inputSelectMunicipio.val())
   });
 
   $('a[data-toggle="pill"]').on('click', function (e) {
-    var idMunicipio = $(".cc-select-municipio").val();
+    var idMunicipio = inputSelectMunicipio.val();
     populeMunicipioData(idMunicipio);
     getMunicipiosJson(populateTexts);
   });
 
   setTimeout(function () {
-    var input = $(".cc-select-municipio")
-    input.val('vitoria');
+    inputSelectMunicipio.val('vitoria');
     populeMunicipioData('vitoria');
     setClusterMapSelected('vitoria');
     setFilterMapSelected('vitoria');
-    buildMembrosCluster(input[0]);
+    buildMembrosCluster('vitoria');
   }, 1000);
 });
 
