@@ -29,29 +29,29 @@ $(document).ready(function() {
 
   //Carousel 1
   $(".cc-custom-carousel-1").slick({
-      slidesToShow:2,
+      slidesToShow:3,
       centerPadding:"60px",
       dots:!0,
       arrows:!1,
       centerMode:!0,
       autoplay:!0,
       responsive:[{
-          breakpoint:991,
-          settings:{
-              centerPadding:"0px"
-              ,arrows:!1,
-              slidesToShow:1,
-              infinite:!1
-          }
+        breakpoint:991,
+        settings:{
+            centerPadding:"0px"
+            ,arrows:!1,
+            slidesToShow:1,
+            infinite:!1
+        }
       }],
       responsive:[{
-          breakpoint:768,
-          settings:{
-              centerPadding:"0px"
-              ,arrows:!1,
-              slidesToShow:1,
-              infinite:!1
-          }
+        breakpoint:768,
+        settings:{
+            centerPadding:"0px"
+            ,arrows:!1,
+            slidesToShow:1,
+            infinite:!1
+        }
       }]
   });
 

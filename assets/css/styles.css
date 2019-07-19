@@ -5096,6 +5096,14 @@ sidebar {
   position: relative;
 }
 
+@media (min-width: 768px){
+  .cc-box-acordion-eixo .cc-regua-pequena{
+    height: 175px;
+    padding: 0 72px;
+    position: relative;
+  }
+}
+
 .cc-box-acordion-eixo .cc-regua-pequena .cc-box-valores{
   position: relative;
   top: 50%;
@@ -5462,4 +5470,8 @@ sidebar {
   margin-right: 15px;
   z-index: 1;
   border-radius: 5px;
+}
+
+.cc-section-carousel{
+  padding: 40px 0;
 }
