@@ -1,26 +1,35 @@
 $(document).ready(function() {
-  var stickySidebar = document.getElementById('sidebar');
 
   $('a[data-toggle="pill"]').on('click', function (e) {
-    $('.cc-box-card.active').removeClass("active");
+    $('.cc-box-card.active').removeClass('show');
+    $('.cc-box-card.active').removeClass('active');
 
     var sessionName = $(this).find('h4').text();
-
     $('#menu-session').data('session', sessionName.toLowerCase());
-
     var nTitle = 'Eixo <strong>' + sessionName + '</strong> de&nbsp;<span data-municipio="" class="municipioName">' + $('.municipioName').text() + '</span>';
-
     $('.cc-titulo-principal').html('');
-
     $('.cc-titulo-principal').html(nTitle);
+
+    var categorias = $('#categorias .tab-pane');
+
+    categorias.each(function (i, el) {
+      $(this).removeClass('show');
+      $(this).removeClass('active');
+    });
+
+    if ($(this).attr('id') === 'v-pills-ian-tab') {
+      categorias.each(function (i, el) {
+        $(this).addClass('show');
+        $(this).addClass('active');
+      });
+    }
 
     $(this).find(">:first-child").addClass("active");
 
-    stickySidebar.updateSticky();
 
     setTimeout(function () {
-      stickySidebar.updateSticky();
-    }, 1000);
+      window.stickySidebar.updateSticky();
+    }, 500);
   });
 
   //Carousel 1
@@ -119,7 +128,7 @@ $(document).ready(function() {
     $(this).find(".fa").addClass(classe);
 
     setTimeout(function () {
-      stickySidebar.updateSticky();
+      window.stickySidebar.updateSticky();
     }, 1000);
   });
 

@@ -127,7 +127,7 @@ function populeMunicipioData(idMunicipio) {
         var keyTerms = keyName.toString().split('_');
         if (keyTerms[0] === 'pr') {
           keyTerms.shift();
-          keyTerms = keyTerms.join('_');  
+          keyTerms = keyTerms.join('_');
           setCategoriesSliderRuler(keyTerms, municipio);
         }
       });
@@ -405,6 +405,12 @@ function populateTexts(data) {
   var session = $('#menu-session').data('session');
   var texto1 = $('.texto1');
   var texto2 = $('.texto2');
+
+  if (session === 'ian') {
+    // TODO: Add variáveis texto ian
+    texto1.html("municipio['texto1_ian']");
+    texto2.html("municipio['texto2_ian']");
+  }
   if (session === 'infraestrutura') {
     texto1.html(municipio['texto1_infra']);
     texto2.html(municipio['texto2_infra']);
@@ -477,14 +483,14 @@ function setCategoriesSliderRuler(keyName, objMunic) {
   var slider = document.getElementById('slider_' + keyName);
   if (slider) {
     var keyMedia = 'prm_' + keyName;
-    var pr_keyName = 'pr_' + keyName; 
+    var pr_keyName = 'pr_' + keyName;
 
     var medVal = objMunic[keyMedia];
     var municVal = objMunic[pr_keyName];
 
     medVal = parseFloat(medVal).toFixed(1);
     municVal = parseFloat(municVal).toFixed(1);
-    
+
     slider.noUiSlider.set([medVal, municVal]);
   }
 }
@@ -574,6 +580,7 @@ function buildMediaSliderRulers() {
         'max': [10.0]
       }
     });
+
     slider.setAttribute('disabled', true);
 
     var media = document.createElement('span');
