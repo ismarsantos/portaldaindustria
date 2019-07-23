@@ -4944,13 +4944,13 @@ sidebar {
 }
 
 .cc-custom-carousel-1 .cc-box-imagem{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 259px;
+  height: 260px;
   border: 10px solid #fff;
   border-radius: 10px;
-  height: 260px;
-}
-
-.cc-custom-carousel-1 .cc-box-imagem img{
-  height: 100%;
 }
 
 .cc-custom-carousel-1 .cc-box-descricao .cc-content{
