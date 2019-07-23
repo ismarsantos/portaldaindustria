@@ -3465,13 +3465,14 @@
 
 .cc-box-galeria .cc-box-img-conteudo .cc-informacoes .cc-nota-raking .cc-texto {
   font-family: Roboto, sans-serif;
-  font-size: 14px;
+  font-size: 10px;
   display: block;
   text-transform: uppercase;
   color: rgb(45, 48, 145);
   font-weight: 300;
   line-height: 14px;
   word-break: break-word;
+  letter-spacing: 0.3px;
 }
 
 .cc-box-galeria .cc-box-img-conteudo .cc-informacoes .cc-nota-raking .cc-ranking {
