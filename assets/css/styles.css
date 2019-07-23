@@ -1533,7 +1533,7 @@
 @media (min-width: 768px) {
   .cc-boneco-absoluto {
     position: absolute;
-    top: -33px;
+    top: 16px;
     max-width: 160px;
   }
 }
@@ -1541,7 +1541,7 @@
 @media (min-width: 992px) {
   .cc-boneco-absoluto {
     position: absolute;
-    top: -35px;
+    top: 8px;
     max-width: 210px;
   }
 }
@@ -1549,7 +1549,7 @@
 @media (min-width: 1200px) {
   .cc-boneco-absoluto {
     position: absolute;
-    top: -60px;
+    top: 26px;
     max-width: 247px;
   }
 }
