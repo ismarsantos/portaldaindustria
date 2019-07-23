@@ -286,6 +286,7 @@
 
 .cc-box-card-menu .cc-box-card.cc-card-principal .cc-descricao .cc-titulo-menu-eixo {
   font-weight: 700;
+  font-size: 30px;
 }
 
 .cc-box-card-menu .cc-linha {
@@ -2904,7 +2905,7 @@
   padding: 10px 15px;
   font-family: Roboto, sans-serif;
   font-size: 12px;
-  color: #b8b8b8;
+  color: #666666;
   text-align: justify;
   display: none;
 }
@@ -2914,7 +2915,7 @@
     padding: 10px 15px;
     font-family: Roboto, sans-serif;
     font-size: 14px;
-    color: #b8b8b8;
+    color: #666666;
   }
 }
 
@@ -5106,6 +5107,7 @@ sidebar {
   height: 175px;
   padding: 0 60px;
   position: relative;
+  background-color: #F3F3F3;
 }
 
 @media (min-width: 768px){
