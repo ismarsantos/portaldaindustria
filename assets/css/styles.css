@@ -1221,6 +1221,7 @@
   font-size: 20px;
   font-family: Roboto, sans-serif;
   text-transform: uppercase;
+  font-style: italic;
 }
 
 .cc-section-select {
@@ -1762,9 +1763,9 @@
   .cc-img-linhaPonto {
     position: absolute;
     left: 152px;
-    top: -216px;
+    top: -212px;
     opacity: 1;
-    height: 1000px;
+    height: 984px;
     width: 426px;
     display: block;
   }
