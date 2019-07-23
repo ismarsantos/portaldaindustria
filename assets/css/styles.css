@@ -1123,10 +1123,10 @@
 }
 
 .cc-box-clusters .cc-box-cluster .cc-content-cluster {
-  /* background-color: #d6d6d6; */
+  background-color: #f3f3f3;
   margin: 20px 15px;
   border-radius: 5px;
-  color: #000;
+  color: rgb(102,102,102);
   font-family: Roboto, sans-serif;
   font-size: 16px;
   text-align: justify;
@@ -5544,5 +5544,32 @@ sidebar {
   position: absolute;
   left: 0;
   top: 10px;
+  border-radius: 50%;
+}
+
+.cc-box-clusters .cc-box-cluster .cc-content-cluster .list-group{
+  margin: 0;
+  padding: 0 15px;
+}
+
+.cc-box-clusters .cc-box-cluster .cc-content-cluster .list-group li{
+  background: none;
+  border: none;
+  position: relative;
+  font-size: 13px;
+  font-family: "Roboto";
+  color: rgb(102, 102, 102);
+  line-height: 2.154;  
+}
+
+.cc-box-clusters .cc-box-cluster .cc-content-cluster .list-group li:before{
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #848484;
+  position: absolute;
+  left: 0;
+  top: 20px;
   border-radius: 50%;
 }
