@@ -1305,19 +1305,41 @@
   text-align: justify;
 }
 
-#cc-section-tres .cc-box-descricao .cc-titulo {
-  font-size: 27px;
-  text-transform: uppercase;
-  color: #2A3091;
-  line-height: 1.509;
-  font-weight: 300;
-  font-family: Roboto, sans-serif;
-  letter-spacing: -1px;
-  text-align: center;
-}
-
 @media (min-width: 768px) {
   #cc-section-tres .cc-box-descricao .cc-titulo {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #2A3091;
+    line-height: 1.509;
+    font-weight: 300;
+    font-family: Roboto, sans-serif;
+    letter-spacing: -1px;
+    text-align: center;
+  }
+}
+
+@media (min-width: 992px) {
+  #cc-section-tres .cc-box-descricao .cc-titulo {
+    font-size: 21px;
+    text-transform: uppercase;
+    color: #2A3091;
+    line-height: 1.509;
+    font-weight: 300;
+    font-family: Roboto, sans-serif;
+    letter-spacing: -1px;
+    text-align: left;
+  }
+}
+
+@media (min-width: 1200px) {
+  #cc-section-tres .cc-box-descricao .cc-titulo {
+    font-size: 25px;
+    text-transform: uppercase;
+    color: #2A3091;
+    line-height: 1.509;
+    font-weight: 300;
+    font-family: Roboto, sans-serif;
+    letter-spacing: -1px;
     text-align: left;
   }
 }

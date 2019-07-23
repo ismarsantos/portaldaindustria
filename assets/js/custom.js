@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     var sessionName = $(this).find('h4').text();
     $('#menu-session').data('session', sessionName.toLowerCase());
-    var nTitle = 'Eixo <strong>' + sessionName + '</strong> de&nbsp;<span data-municipio="" class="municipioName">' + $('.municipioName').text() + '</span>';
+    var nTitle = 'Eixo <strong>' + sessionName + '</strong> de&nbsp;<span data-municipio="" class="municipioName">"' + $('.municipioName').text() + '"</span>';
     $('.cc-titulo-principal').html('');
     $('.cc-titulo-principal').html(nTitle);
 
@@ -145,6 +145,15 @@ $(document).ready(function() {
       $(this).find(".fa").removeClass("fa-plus");
       $(this).find(".fa").removeClass("fa-minus");
       $(this).find(".fa").addClass(classe);
+  });
+
+  $(".content-carousel").click(function(){
+    var descricao = $(this).closest(".cc-box-descricao");
+    var resumo = descricao.find(".cc-resumo");
+    var aux = resumo.html();
+    var textoCompleto = resumo.data("carousel-content");
+    $(resumo).html(textoCompleto);
+    $(resumo).data("carousel-content", aux);
   });
 
 });
