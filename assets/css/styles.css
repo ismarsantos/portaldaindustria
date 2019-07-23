@@ -1749,37 +1749,18 @@
 }
 
 .cc-img-linhaPonto {
-  position: absolute;
-  left: 152px;
-  top: -120px;
-  opacity: 0;
   display: none;
-}
-
-@media (min-width: 768px) {
-  .cc-img-linhaPonto {
-    position: absolute;
-    left: 152px;
-    top: -120px;
-    opacity: 1;
-  }
-}
-
-@media (min-width: 992px) {
-  .cc-img-linhaPonto {
-    position: absolute;
-    left: 60px;
-    top: 6px;
-    opacity: 1;
-  }
 }
 
 @media (min-width: 1200px) {
   .cc-img-linhaPonto {
     position: absolute;
     left: 152px;
-    top: -120px;
+    top: -216px;
     opacity: 1;
+    height: 1000px;
+    width: 426px;
+    display: block;
   }
 }
 
@@ -1854,6 +1835,7 @@
   background-position: center;
   background-size: cover;
   position: relative;
+  padding-bottom: 50px;
 }
 
 .cc-cabecalho .navbar .cc-item, .cc-cabecalho .navbar .cc-item.active {
@@ -5474,4 +5456,8 @@ sidebar {
 
 .cc-section-carousel{
   padding: 40px 0;
+}
+
+#cc-section-ian .cc-box-sobre-ian .cc-titulo-ian .cc-destacado{
+  color: #009fe3;
 }
