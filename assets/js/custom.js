@@ -34,22 +34,22 @@ $(document).ready(function() {
 
   //Carousel 1
   $(".cc-custom-carousel-1").slick({
-      slidesToShow:3,
-      centerPadding:"60px",
-      dots:!0,
-      arrows:!1,
-      centerMode:!0,
-      autoplay:!0,
-      responsive:[{
-        breakpoint:991,
+    slidesToShow:3,
+    centerPadding:"0px",
+    dots:!0,
+    arrows:!1,
+    centerMode:!0,
+    autoplay:!0,
+    responsive:[{
+        breakpoint:992,
         settings:{
             centerPadding:"0px"
             ,arrows:!1,
-            slidesToShow:1,
+            slidesToShow:2,
             infinite:!1
         }
-      }],
-      responsive:[{
+    }],
+    responsive:[{
         breakpoint:768,
         settings:{
             centerPadding:"0px"
@@ -57,7 +57,7 @@ $(document).ready(function() {
             slidesToShow:1,
             infinite:!1
         }
-      }]
+    }]
   });
 
   //Carousel 2

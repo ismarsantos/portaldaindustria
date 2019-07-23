@@ -5558,16 +5558,19 @@ sidebar {
 .cc-box-clusters .cc-box-cluster .cc-content-cluster .list-group{
   margin: 0;
   padding: 0 15px;
+  flex-direction: initial;
 }
 
 .cc-box-clusters .cc-box-cluster .cc-content-cluster .list-group li{
   background: none;
   border: none;
   position: relative;
-  font-size: 13px;
+  font-size: 12px;
   font-family: "Roboto";
   color: rgb(102, 102, 102);
-  line-height: 2.154;  
+  line-height: 16px;
+  text-align: left;
+  letter-spacing: -0.5px; 
 }
 
 .cc-box-clusters .cc-box-cluster .cc-content-cluster .list-group li:before{
@@ -5578,6 +5581,6 @@ sidebar {
   background-color: #848484;
   position: absolute;
   left: 0;
-  top: 20px;
+  top: 15px;
   border-radius: 50%;
 }
