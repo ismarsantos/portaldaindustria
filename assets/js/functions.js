@@ -382,10 +382,10 @@ function buildMembrosCluster(idMunicipio) {
 
       $('#membros-cluster').empty();
       var ul = document.createElement('ul');
-      ul.classList.add('list-group', 'list-group-flush');
+      ul.classList.add('list-group', 'list-group-flush','row');
       $(cClusters).each(function(i,item) {
         var li = document.createElement('li');
-        li.classList.add('list-group-item');
+        li.classList.add('list-group-item','col-md-6');
         $(li).html(item.munic);
         $(ul).append(li);
         $('#membros-cluster').append(ul);
