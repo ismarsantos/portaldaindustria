@@ -267,9 +267,9 @@ function clickFilterMap(idMunicipio) {
 
 function setEstadualMapValues(municipio) {
   if (municipio) {
-    $('#map-ian')         .html(parseFloat(municipio.med_ian,).toFixed(1));
+    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(1));
     $('#ranking')         .html(parseInt(municipio.pos_ian,));
-    $('#infra-ranking')   .html(parseInt(municipio.pos_ian,).toString() + '\u00BA');
+    $('#infra-ranking')   .html(parseInt(municipio.in,).toString() + '\u00BA');
     $('#infra-media')     .html(parseFloat(municipio.med_infra,).toFixed(1));
     $('#infra-pos')       .html(parseFloat(municipio.ian,).toFixed(1));
     $('#gfiscal-ranking') .html(parseInt(municipio.pos_ian,).toString() + '\u00BA');
