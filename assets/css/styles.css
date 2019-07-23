@@ -46,7 +46,7 @@
   .cc-box-card-menu .cc-box-card {
     background: #fff;
     border-radius: 4px;
-    height: 100px;
+    height: 90px;
     margin-top: 10px;
     border-bottom: 5px solid #2A3091;
     border-bottom-left-radius: 8px 8px;
@@ -300,7 +300,7 @@
 }
 
 .cc-box-card-menu {
-  height: 670px;
+  height: 600px;
 }
 
 .cc-regua-grande {
