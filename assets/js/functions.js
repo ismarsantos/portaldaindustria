@@ -163,7 +163,15 @@ function populateMainRulerValues(municipio) {
 
   var session = $('#menu-session').data('session');
 
-  if (session === 'infraestrutura') {
+  if (session === 'ian') {
+    // TODO: Add variáveis texto ian
+    setMainRuler(
+      municipio.cmin_gestfin,
+      municipio.cmed_gestfin,
+      municipio.gestfin,
+      municipio.cmax_gestfin
+    )
+  } else if (session === 'infraestrutura') {
     setMainRuler(
       municipio.cmin_infra,
       municipio.cmed_infra,
