@@ -41,7 +41,7 @@ function initClusterMap(idMunicipio) {
         for (var j in data){
           if (data[i].cluster == data[j].cluster) {
             $(buildMunicSelector(data[j].key)).css("fill", "#a1a1a1");
-            $(buildMunicSelector(munic_current)).css("fill", "#ffba5a");
+            $(buildMunicSelector(munic_current)).css("fill", "#c9a471");
           }
         }
       }
@@ -71,22 +71,22 @@ function initFilterMap(idMunicipio) {
           for (var j in data){
             if (data[i].cluster == data[j].cluster) {
               $(buildMunicSelector(data[j].key)).css("fill", "#a1a1a1");
-              $(buildMunicSelector(munic_current)).css("fill", "#ffba5a");
+              $(buildMunicSelector(munic_current)).css("fill", "#c9a471");
               $("#agrupamentos").append("<li>" + data[j].munic +": "+ data[j].cluster+ "</li>");
             }
           }
         }else if(selectedValueRadio == "regional"){
           for (var j in data){
             if (data[i].regional == data[j].regional) {
-              $(buildMunicSelector(data[j].key)).css("fill", "#2d3091");
-              $(buildMunicSelector(munic_current)).css("fill", "#ffba5a");
+              $(buildMunicSelector(data[j].key)).css("fill", "#a1a1a1");
+              $(buildMunicSelector(munic_current)).css("fill", "#c9a471");
               $("#agrupamentos").append("<li>" + data[j].munic +": "+ data[j].regional+ "</li>");
             }
           }
         }else if(selectedValueRadio == "estadual"){
           for (var j in data){
             $(buildMunicSelector(data[j].key)).css("fill", "#a1a1a1");
-            $(buildMunicSelector(munic_current)).css("fill", "#ffba5a");
+            $(buildMunicSelector(munic_current)).css("fill", "#c9a471");
           }
         }else{
           // alert("Escolha um grupo primeiro!")
@@ -163,7 +163,15 @@ function populateMainRulerValues(municipio) {
 
   var session = $('#menu-session').data('session');
 
-  if (session === 'infraestrutura') {
+  if (session === 'ian') {
+    // TODO: Add variáveis texto ian
+    setMainRuler(
+      municipio.cmin_gestfin,
+      municipio.cmed_gestfin,
+      municipio.gestfin,
+      municipio.cmax_gestfin
+    )
+  } else if (session === 'infraestrutura') {
     setMainRuler(
       municipio.cmin_infra,
       municipio.cmed_infra,
@@ -259,9 +267,9 @@ function clickFilterMap(idMunicipio) {
 
 function setEstadualMapValues(municipio) {
   if (municipio) {
-    $('#map-ian')         .html(parseFloat(municipio.med_ian,).toFixed(1));
+    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(1));
     $('#ranking')         .html(parseInt(municipio.pos_ian,));
-    $('#infra-ranking')   .html(parseInt(municipio.pos_ian,).toString() + '\u00BA');
+    $('#infra-ranking')   .html(parseInt(municipio.in,).toString() + '\u00BA');
     $('#infra-media')     .html(parseFloat(municipio.med_infra,).toFixed(1));
     $('#infra-pos')       .html(parseFloat(municipio.ian,).toFixed(1));
     $('#gfiscal-ranking') .html(parseInt(municipio.pos_ian,).toString() + '\u00BA');
