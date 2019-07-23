@@ -41,7 +41,7 @@ function initClusterMap(idMunicipio) {
         for (var j in data){
           if (data[i].cluster == data[j].cluster) {
             $(buildMunicSelector(data[j].key)).css("fill", "#a1a1a1");
-            $(buildMunicSelector(munic_current)).css("fill", "#ffba5a");
+            $(buildMunicSelector(munic_current)).css("fill", "#c9a471");
           }
         }
       }
@@ -71,22 +71,22 @@ function initFilterMap(idMunicipio) {
           for (var j in data){
             if (data[i].cluster == data[j].cluster) {
               $(buildMunicSelector(data[j].key)).css("fill", "#a1a1a1");
-              $(buildMunicSelector(munic_current)).css("fill", "#ffba5a");
+              $(buildMunicSelector(munic_current)).css("fill", "#c9a471");
               $("#agrupamentos").append("<li>" + data[j].munic +": "+ data[j].cluster+ "</li>");
             }
           }
         }else if(selectedValueRadio == "regional"){
           for (var j in data){
             if (data[i].regional == data[j].regional) {
-              $(buildMunicSelector(data[j].key)).css("fill", "#2d3091");
-              $(buildMunicSelector(munic_current)).css("fill", "#ffba5a");
+              $(buildMunicSelector(data[j].key)).css("fill", "#a1a1a1");
+              $(buildMunicSelector(munic_current)).css("fill", "#c9a471");
               $("#agrupamentos").append("<li>" + data[j].munic +": "+ data[j].regional+ "</li>");
             }
           }
         }else if(selectedValueRadio == "estadual"){
           for (var j in data){
             $(buildMunicSelector(data[j].key)).css("fill", "#a1a1a1");
-            $(buildMunicSelector(munic_current)).css("fill", "#ffba5a");
+            $(buildMunicSelector(munic_current)).css("fill", "#c9a471");
           }
         }else{
           // alert("Escolha um grupo primeiro!")
