@@ -1398,6 +1398,7 @@
 .cc-box-mapa .cc-box-formulario .cc-box-tipo .cc-box-custom-radio .cc-custom-label:hover, .cc-box-mapa .cc-box-formulario .cc-box-tipo .cc-box-custom-radio .cc-custom-label.cc-active {
   color: #fff;
   text-decoration: underline;
+  font-style: italic;
 }
 
 .cc-box-mapa .cc-box-formulario .cc-box-tipo .cc-box-custom-radio .cc-custom-label:hover .cc-custom-radio:before, .cc-box-mapa .cc-box-formulario .cc-box-tipo .cc-box-custom-radio .cc-custom-label.cc-active .cc-custom-radio:before {
