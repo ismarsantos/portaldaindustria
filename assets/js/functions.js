@@ -267,93 +267,168 @@ function clickFilterMap(idMunicipio) {
 
 function setEstadualMapValues(municipio) {
   if (municipio) {
+
+    //  variável: ian
     $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(1));
+    //  variável: pos_ian
     $('#ranking')         .html(parseInt(municipio.pos_ian,));
-    $('#infra-ranking')   .html(parseInt(municipio.ian,).toString() + '\u00BA');
+
+    //  variável: pos_infra
+    $('#infra-ranking')   .html(parseInt(municipio.pos_infra,).toString() + '\u00BA');
+    //  variável: infra
+    $('#infra-pos')       .html(parseFloat(municipio.infra,).toFixed(1));
+    //  variável: med_infra
     $('#infra-media')     .html(parseFloat(municipio.med_infra,).toFixed(1));
-    $('#infra-pos')       .html(parseFloat(municipio.ian,).toFixed(1));
-    $('#gfiscal-ranking') .html(parseInt(municipio.pos_ian,).toString() + '\u00BA');
-    $('#gfiscal-media')   .html(parseFloat(municipio.med_gestfin,).toFixed(1));
-    $('#gfiscal-pos')     .html(parseFloat(municipio.ian,).toFixed(1));
-    $('#pmercado-ranking').html(parseInt(municipio.pos_ian,).toString() + '\u00BA');
+    
+    //  variável: pos_merc
+    $('#pmercado-ranking').html(parseInt(municipio.pos_merc,).toString() + '\u00BA');
+    //  variável: merc
+    $('#pmercado-pos')    .html(parseFloat(municipio.merc,).toFixed(1));
+    //  variável: med_merc
     $('#pmercado-media')  .html(parseFloat(municipio.med_merc,).toFixed(1));
-    $('#pmercado-pos')    .html(parseFloat(municipio.ian,).toFixed(1));
-    $('#chumano-ranking') .html(parseInt(municipio.pos_ian,).toString() + '\u00BA');
+    
+    //  variável: pos_caph
+    $('#chumano-ranking') .html(parseInt(municipio.pos_caph,).toString() + '\u00BA');
+    //  variável: caph
+    $('#chumano-pos')     .html(parseFloat(municipio.caph).toFixed(1));
+    //  variável: med_caph
     $('#chumano-media')   .html(parseFloat(municipio.med_caph,).toFixed(1));
-    $('#chumano-pos')     .html(parseFloat(municipio.ian).toFixed(1));
+    
+    //  variável: pos_gestfin
+    $('#gfiscal-ranking') .html(parseInt(municipio.pos_gestfin,).toString() + '\u00BA');
+    //  variável: gestfin
+    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(1));
+    //  variável: med_gestfin
+    $('#gfiscal-media')   .html(parseFloat(municipio.med_gestfin,).toFixed(1));
 
     setMediaSliderRulers(
+
       municipio.med_infra,
-      municipio.ian,
-      municipio.med_gestfin,
-      municipio.ian,
+      municipio.infra,
+
       municipio.med_merc,
-      municipio.ian,
+      municipio.merc,
+
       municipio.med_caph,
-      municipio.ian)
+      municipio.caph,
+
+      municipio.med_gestfin,
+      municipio.gestfin
+      
+      )
   }
 }
 
 function setRegionalMapValues(municipio) {
   if (municipio) {
-    $('#map-ian')         .html(parseFloat(municipio.rpos_ian,).toFixed(1));
-    $('#ranking')         .html(parseInt(municipio.regional,));
+
+    //  variável: ian
+    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(1));
+    //  variável: rpos_ian
+    $('#ranking')         .html(parseInt(municipio.rpos_ian,));
+
+    //  variável: rpos_infra
     $('#infra-ranking')   .html(parseInt(municipio.rpos_infra,).toString() + '\u00BA');
-    $('#infra-media')     .html(parseFloat(municipio.rmed_infra,).toFixed(1));
+    //  variável: infra
     $('#infra-pos')       .html(parseFloat(municipio.infra,).toFixed(1));
-    $('#gfiscal-ranking') .html(parseInt(municipio.rpos_gestfin,).toString() + '\u00BA');
-    $('#gfiscal-media')   .html(parseFloat(municipio.rmed_gestfin,).toFixed(1));
-    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(1));
+    //  variável: rmed_infra
+    $('#infra-media')     .html(parseFloat(municipio.rmed_infra,).toFixed(1));
+
+    //  variável: rpos_merc
     $('#pmercado-ranking').html(parseInt(municipio.rpos_merc,).toString() + '\u00BA');
-    $('#pmercado-media')  .html(parseFloat(municipio.rmed_merc,).toFixed(1));
+    //  variável: merc
     $('#pmercado-pos')    .html(parseFloat(municipio.merc,).toFixed(1));
+    //  variável: rmed_merc
+    $('#pmercado-media')  .html(parseFloat(municipio.rmed_merc,).toFixed(1));
+
+    //  variável: rpos_caph
     $('#chumano-ranking') .html(parseInt(municipio.rpos_caph,).toString() + '\u00BA');
-    $('#chumano-media')   .html(parseFloat(municipio.rmed_caph,).toFixed(1));
+    //  variável: caph
     $('#chumano-pos')     .html(parseFloat(municipio.caph).toFixed(1));
+    //  variável: rmed_caph
+    $('#chumano-media')   .html(parseFloat(municipio.rmed_caph,).toFixed(1));
+
+    //  variável: rpos_gestfin
+    $('#gfiscal-ranking') .html(parseInt(municipio.rpos_gestfin,).toString() + '\u00BA');
+    //  variável: gestfin
+    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(1));
+    //  variável: rmed_gestfin
+    $('#gfiscal-media')   .html(parseFloat(municipio.rmed_gestfin,).toFixed(1));    
 
     setMediaSliderRulers(
+
       municipio.rmed_infra,
       municipio.infra,
-      municipio.rmed_gestfin,
-      municipio.gestfin,
+
       municipio.rmed_merc,
       municipio.merc,
+
       municipio.rmed_caph,
-      municipio.caph)
+      municipio.caph,
+
+      municipio.rmed_gestfin,
+      municipio.gestfin         
+      
+      )
   }
 }
 
 function setClusterMapValues(municipio) {
   if (municipio) {
-    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(1));
-    $('#ranking')         .html(parseInt(municipio.cpos_ian,));
+    
+    //  variável: ian
+    $('#map-ian')         .html(parseFloat(municipio.ian,).toFixed(1)); 
+    //  variável: cpos_ian
+    $('#ranking')         .html(parseInt(municipio.cpos_ian,));     
+    
+    //  variável: cpos_infra
     $('#infra-ranking')   .html(parseInt(municipio.cpos_infra,).toString() + '\u00BA');
-    $('#infra-media')     .html(parseFloat(municipio.cmed_infra,).toFixed(1));
-    $('#infra-pos')       .html(parseFloat(municipio.infra,).toFixed(1));
-    $('#gfiscal-ranking') .html(parseInt(municipio.cpos_gestfin,).toString() + '\u00BA');
-    $('#gfiscal-media')   .html(parseFloat(municipio.cmed_gestfin,).toFixed(1));
-    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(1));
-    $('#pmercado-ranking').html(parseInt(municipio.cpos_merc,).toString() + '\u00BA');
-    $('#pmercado-media')  .html(parseFloat(municipio.cmed_merc,).toFixed(1));
-    $('#pmercado-pos')    .html(parseFloat(municipio.merc,).toFixed(1));
+    //  variável: infra
+    $('#infra-pos')       .html(parseFloat(municipio.infra,).toFixed(1)); 
+    //  variável: cmed_infra
+    $('#infra-media')     .html(parseFloat(municipio.cmed_infra,).toFixed(1));     
+    
+    // variável: cpos_merc
+    $('#pmercado-ranking').html(parseInt(municipio.cpos_merc,).toString() + '\u00BA'); 
+    // variável: merc
+    $('#pmercado-pos')    .html(parseFloat(municipio.merc,).toFixed(1)); 
+    //  variável: cmed_merc
+    $('#pmercado-media')  .html(parseFloat(municipio.cmed_merc,).toFixed(1)); 
+    
+    // variável: cpos_caph
     $('#chumano-ranking') .html(parseInt(municipio.cpos_caph,).toString() + '\u00BA');
+    // variável: caph
+    $('#chumano-pos')     .html(parseFloat(municipio.caph).toFixed(1)); 
+    // variável: cmed_caph
     $('#chumano-media')   .html(parseFloat(municipio.cmed_caph,).toFixed(1));
-    $('#chumano-pos')     .html(parseFloat(municipio.caph).toFixed(1));
+    
+    // variável: cpos_gestfin
+    $('#gfiscal-ranking') .html(parseInt(municipio.cpos_gestfin,).toString() + '\u00BA');
+    // variável: gestfin
+    $('#gfiscal-pos')     .html(parseFloat(municipio.gestfin,).toFixed(1));
+    // variável: cmed_gestfin
+    $('#gfiscal-media')   .html(parseFloat(municipio.cmed_gestfin,).toFixed(1));    
 
     setMediaSliderRulers(
+
       municipio.cmed_infra,
-      municipio.infra,
-      municipio.cmed_gestfin,
-      municipio.gestfin,
+      municipio.infra,      
+
       municipio.cmed_merc,
       municipio.merc,
+      
       municipio.cmed_caph,
-      municipio.caph)
+      municipio.caph,
+
+      municipio.cmed_gestfin,      
+      municipio.gestfin      
+
+      )
   }
 }
 
 function setMediaSliderRulers(infra_media, infra_pos, pmercado_media, pmercado_pos, chumano_media, chumano_pos, gfiscal_media, gfiscal_pos) {
-  var slider_infra_media = document.getElementById('slider_infra_media');
+  var slider_infra_media = document.getElementById('slider_infra_media');  
   slider_infra_media.noUiSlider.set([infra_media, infra_pos]);
 
   var slider_pmercado_media = document.getElementById('slider_pmercado_media');
