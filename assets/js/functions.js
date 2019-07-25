@@ -214,16 +214,13 @@ function setMainRuler(menorVal, medVal, municVal, maiorVal) {
   var vf_min = 0.5;
   var vf_max = 9.5;
 
-  medVal   = parseFloat(medVal).toFixed(1);
-  municVal = parseFloat(municVal).toFixed(1);
-
   var vf_med = (((medVal - menorVal) / (maiorVal - menorVal)) * 9 ) + 0.5;
   var vf_mun = (((municVal - menorVal) / (maiorVal - menorVal)) * 9 ) + 0.5;
-
+ 
   vf_med = parseFloat(vf_med).toFixed(1);
   vf_mun = parseFloat(vf_mun).toFixed(1);
 
-  // console.log([vf_min, vf_med, vf_mun, vf_max]);
+
   mainslider.noUiSlider.set([vf_min, vf_med, vf_mun, vf_max]);
 }
 
