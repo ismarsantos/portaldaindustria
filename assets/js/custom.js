@@ -6,7 +6,13 @@ $(document).ready(function() {
 
     var sessionName = $(this).find('h4').text();
     $('#menu-session').data('session', sessionName.toLowerCase());
-    var nTitle = 'Eixo <strong>' + sessionName + '</strong> de &nbsp;<span data-municipio="" class="municipioName">"' + $('.municipioName').text() + '"</span>';
+    
+    if(sessionName === 'IAN') {
+      var nTitle = '<strong>' + sessionName + '</strong> de &nbsp;<span style="font-weight: 700; color: #c9a471;">"<span data-municipio="" class="municipioName">' + $('.municipioName').text() + '</span>"</span>';
+    } else {
+      var nTitle = 'Eixo <strong>' + sessionName + '</strong> de &nbsp;<span style="font-weight: 700; color: #c9a471;">"<span data-municipio="" class="municipioName">' + $('.municipioName').text() + '</span>"</span>';
+    }
+  
     $('.cc-titulo-principal').html('');
     $('.cc-titulo-principal').html(nTitle);
 

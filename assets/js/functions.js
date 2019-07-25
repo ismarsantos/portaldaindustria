@@ -158,18 +158,18 @@ function populeMunicipioData(idMunicipio) {
   });
 }
 
-// Verifica a sessão atual do menu e pupula a regua pincipal.
+// Verifica a sessão atual do menu e popula a regua principal.
 function populateMainRulerValues(municipio) {
 
   var session = $('#menu-session').data('session');
-
+ 
   if (session === 'ian') {
     // TODO: Add variáveis texto ian
     setMainRuler(
-      municipio.cmin_gestfin,
-      municipio.cmed_gestfin,
-      municipio.gestfin,
-      municipio.cmax_gestfin
+      municipio.cmin_ian,
+      municipio.cmed_ian,
+      municipio.ian,
+      municipio.cmax_ian
     )
   } else if (session === 'infraestrutura') {
     setMainRuler(
@@ -178,7 +178,7 @@ function populateMainRulerValues(municipio) {
       municipio.infra,
       municipio.cmax_infra
     )
-  } else if (session === 'pontecial de mercado' ) {
+  } else if (session === 'potencial de mercado' ) {
     setMainRuler(
       municipio.cmin_merc,
       municipio.cmed_merc,
@@ -495,7 +495,7 @@ function populateTexts(data) {
     texto1.html(municipio['texto1_infra']);
     texto2.html(municipio['texto2_infra']);
   }
-  if (session === 'pontecial de mercado') {
+  if (session === 'potencial de mercado') {
     texto1.html(municipio['texto1_potencial_de_mercado']);
     texto2.html(municipio['texto2_potencial_de_mercado']);
   }
