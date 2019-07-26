@@ -261,7 +261,7 @@ function clickFilterMap(idMunicipio) {
         
       } else {
         // estadual
-        getClassSelectedValueRadio[0].innerHTML = "Média Estadual";        
+        getClassSelectedValueRadio[0].innerHTML = "Média do Estado";        
         setEstadualMapValues(municipio);
       }
     });
