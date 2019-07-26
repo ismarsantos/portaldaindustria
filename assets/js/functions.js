@@ -247,15 +247,21 @@ function clickFilterMap(idMunicipio) {
       });
 
       var selectedValueRadio = $("input[name='options']:checked").val();
+      var getClassSelectedValueRadio = document.getElementsByClassName("op_selectedValueRadio");
 
       if (selectedValueRadio === 'cluster') {
-        // cluster
+        // cluster        
+        getClassSelectedValueRadio[0].innerHTML = "Média do Cluster";
         setClusterMapValues(municipio);
+
       } else if (selectedValueRadio === 'regional') {
         // regional
+        getClassSelectedValueRadio[0].innerHTML = "Média da Regional";
         setRegionalMapValues(municipio);
+        
       } else {
         // estadual
+        getClassSelectedValueRadio[0].innerHTML = "Média Estadual";        
         setEstadualMapValues(municipio);
       }
     });
@@ -664,7 +670,9 @@ function buildMediaSliderRulers() {
     slider.setAttribute('disabled', true);
 
     var media = document.createElement('span');
+    media.className = "op_selectedValueRadio";
     media.innerHTML = "Média do Cluster";
+ 
 
     var municipio = document.createElement('span');
     municipio.innerHTML = "Vitória";

@@ -23,6 +23,7 @@
   color: #c9a471;
 }
 
+
 .cc-titulo-principal strong {
   font-weight: 700;
 }
@@ -1127,9 +1128,11 @@
   background-color: #f3f3f3;
   margin: 20px 15px;
   border-radius: 5px;
-  color: rgb(102,102,102);
+  color: #666666;
   font-family: Roboto, sans-serif;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 24px;
   text-align: justify;
   display: none;
   transition: display ease-out 0.5s;
@@ -2447,7 +2450,7 @@
 }
 
 .cc-linha-ponto:after {
-  right: 0;
+  right: -1px;
   background-color: #a0a0a0;
 }
 
@@ -3497,6 +3500,10 @@
   line-height: 14px;
   word-break: break-word;
   letter-spacing: 0.3px;
+}
+
+.cc-texto > a {
+  color: #2C3091;
 }
 
 .cc-box-galeria .cc-box-img-conteudo .cc-informacoes .cc-nota-raking .cc-ranking {
