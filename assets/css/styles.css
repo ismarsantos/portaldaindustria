@@ -1277,6 +1277,7 @@
   font-size: 18px;
   padding: 10px;
   text-transform: uppercase;
+  max-width: 201px;
 }
 
 #cc-section-tres .cc-box-descricao .cc-box-botao .cc-botao i{
@@ -3211,7 +3212,7 @@
   }
 }
 
-.cc-rodape .cc-link-contato .cc-span-telefone {
+.cc-rodape .cc-link-contato .cc-span-telefone .cc-span-map {
   display: block;
   font-weight: 300;
   line-height: 19px;
