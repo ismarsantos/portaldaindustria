@@ -162,7 +162,7 @@ function populeMunicipioData(idMunicipio) {
 function populateMainRulerValues(municipio) {
 
   var session = $('#menu-session').data('session');
- 
+
   if (session === 'ian') {
     // TODO: Add variáveis texto ian
     setMainRuler(
@@ -513,6 +513,7 @@ function populateTexts(data) {
     texto1.html(municipio['texto1_gestao_fiscal']);
     texto2.html(municipio['texto2_gestao_fiscal']);
   }
+
 }
 
 function buildCategoriesSliderRuler(keyName) {
@@ -746,6 +747,7 @@ $(document).ready(function() {
     buildMembrosCluster(munic_current);
     selectMunicipioOption(munic_current);
     populeMunicipioData(munic_current);
+    getMunicipiosJson(populateTexts);
   });
 
   $(".cc-custom-radio").on('click', function () {
