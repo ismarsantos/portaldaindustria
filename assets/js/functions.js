@@ -115,7 +115,7 @@ function populeMunicipioData(idMunicipio) {
     var municipio = data.find(obj => {
       return obj.key === idMunicipio
     });
-
+    console.log(data)
     if (municipio) {
       // $('img#mapa-json').attr("src","assets/img/mapa-cluster-" + municipio.key + ".png");
       populateMainRulerValues(municipio);
@@ -487,15 +487,15 @@ function populateTexts(data) {
   $(keys).each(function (i, name) {
     $('.'+ name).html(municipio[name]);
   });
-
+  
   var session = $('#menu-session').data('session');
   var texto1 = $('.texto1');
   var texto2 = $('.texto2');
 
   if (session === 'ian') {
     // TODO: Add variáveis texto ian
-    texto1.html("municipio['texto1_ian']");
-    texto2.html("municipio['texto2_ian']");
+    texto1.html(municipio['texto1_ian']);
+    texto2.html(municipio['texto2_ian']);
   }
   if (session === 'infraestrutura') {
     texto1.html(municipio['texto1_infra']);
